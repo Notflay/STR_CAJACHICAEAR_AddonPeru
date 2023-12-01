@@ -1,0 +1,71 @@
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.exe.config
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.exe
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.pdb
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.BL.dll
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.DL.dll
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.Metadata.dll
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.BL.pdb
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.DL.pdb
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.Metadata.pdb
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\Interop.SAPbouiCOM.dll
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.ResolveComReference.cache
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.exe
+C:\Users\Administrator\Desktop\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.pdb
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.exe.config
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.exe
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.pdb
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.BL.dll
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.DL.dll
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.Metadata.dll
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.BL.pdb
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.DL.pdb
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.Metadata.pdb
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csprojAssemblyReference.cache
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\Interop.SAPbouiCOM.dll
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.ResolveComReference.cache
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.Properties.Resources.resources
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.GenerateResource.cache
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.CoreCompileInputs.cache
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.CopyComplete
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.exe
+C:\Users\Usuario02\Desktop\Caja Chica ER\Caja Chica ER\Caja Chica ER\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.pdb
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.exe.config
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.exe
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.pdb
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.BL.dll
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.DL.dll
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.Metadata.dll
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.BL.pdb
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.DL.pdb
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.Metadata.pdb
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.AssemblyReference.cache
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\Interop.SAPbouiCOM.dll
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.ResolveComReference.cache
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.Properties.Resources.resources
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.GenerateResource.cache
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.CoreCompileInputs.cache
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.CopyComplete
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.exe
+C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.pdb
+D:\Chamba Backend\AddonPeru\Addons a Juntar\CC y EAR\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.AssemblyReference.cache
+D:\Chamba Backend\AddonPeru\Addons a Juntar\CC y EAR\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.ResolveComReference.cache
+D:\Chamba Backend\AddonPeru\Addons a Juntar\CC y EAR\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.Properties.Resources.resources
+D:\Chamba Backend\AddonPeru\Addons a Juntar\CC y EAR\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.GenerateResource.cache
+D:\Chamba Backend\AddonPeru\Addons a Juntar\CC y EAR\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.CoreCompileInputs.cache
+D:\Chamba Backend\AddonPeru\Addons a Juntar\CC y EAR\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.exe
+D:\Chamba Backend\AddonPeru\Addons a Juntar\CC y EAR\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.pdb

@@ -1,0 +1,56 @@
+C:\Users\JFERNANDEZ\Desktop\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\JFERNANDEZ\Desktop\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbobsCOM.dll
+C:\Users\JFERNANDEZ\Desktop\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbouiCOM.dll
+C:\Users\JFERNANDEZ\Desktop\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.csproj.ResolveComReference.cache
+C:\Users\JFERNANDEZ\Desktop\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.pdb
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.dll
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.pdb
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbobsCOM.dll
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbouiCOM.dll
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.csproj.ResolveComReference.cache
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.dll
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.pdb
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\Desarrollo\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.dll
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\Desarrollo\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.pdb
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\Desarrollo\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbobsCOM.dll
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\Desarrollo\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbouiCOM.dll
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\Desarrollo\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.csproj.ResolveComReference.cache
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\Desarrollo\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.dll
+\\192.168.1.7\JohanF\Addon de Cajas Chicas - Entregas a Rendir\Desarrollo\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbobsCOM.dll
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbouiCOM.dll
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.csproj.ResolveComReference.cache
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbobsCOM.dll
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbouiCOM.dll
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.csproj.ResolveComReference.cache
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\JFERNANDEZ\Desktop\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\JFERNANDEZ\Desktop\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbobsCOM.dll
+C:\Users\JFERNANDEZ\Desktop\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbouiCOM.dll
+C:\Users\JFERNANDEZ\Desktop\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.csproj.ResolveComReference.cache
+C:\Users\JFERNANDEZ\Desktop\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\JFERNANDEZ\Desktop\2016\Adinelsa\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\2016\Adinelsa\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\JFERNANDEZ\Desktop\2016\Adinelsa\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbobsCOM.dll
+C:\Users\JFERNANDEZ\Desktop\2016\Adinelsa\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbouiCOM.dll
+C:\Users\JFERNANDEZ\Desktop\2016\Adinelsa\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.csproj.ResolveComReference.cache
+C:\Users\JFERNANDEZ\Desktop\2016\Adinelsa\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\JFERNANDEZ\Desktop\2016\Adinelsa\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.pdb
+D:\2015\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.dll
+D:\2015\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\bin\Release\STR_CajaChica_Entregas.UTIL.pdb
+D:\2015\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbobsCOM.dll
+D:\2015\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\Interop.SAPbouiCOM.dll
+D:\2015\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.csproj.ResolveComReference.cache
+D:\2015\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.dll
+D:\2015\2015\Desarrollos Finales\Addon CajaChica- EntregaaRendir\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\Release\STR_CajaChica_Entregas.UTIL.pdb
