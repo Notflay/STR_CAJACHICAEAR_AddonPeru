@@ -1,5 +1,4 @@
 ﻿using SAPbobsCOM;
-using STR_Localizacion.UTIL;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -7,11 +7,11 @@ using System.Xml;
 using STR_CajaChica_Entregas.Metadata;
 using STR_CajaChica_Entregas.UTIL;
 using STR_CajaChica_Entregas.DL;
-
+using STR_CajaChica_Entregas.BL;
 
 namespace STR_CajaChica_Entregas.UL
 {
-    class Cls_Main
+    public class Cls_Main
     {
 
         //Variables sobre objetos
@@ -216,25 +216,39 @@ namespace STR_CajaChica_Entregas.UL
                             switch (ls_NmbFrm)
                             {
                                 case Cls_CCH_Crear_Accesos.gs_NomForm:
-                                    go_CCH_Crear_Accesos.sb_DataFormLoad();
+                                    if (Validacion.fn_getComparacion(3) == true)
+                                        go_CCH_Crear_Accesos.sb_DataFormLoad();
+                                    else return;
                                     break;
                                 case Cls_CCH_Apertura.gs_NomForm:
-                                    go_CCH_Aperturar.sb_DataFormLoadAdd();
+                                    if (Validacion.fn_getComparacion(3) == true)
+                                        go_CCH_Aperturar.sb_DataFormLoadAdd();
+                                    else return;
                                     break;
                                 case Cls_CCH_Carga.gs_NomForm:
-                                    go_CCH_Cargar.sb_DataFormLoadAdd();
+                                    if (Validacion.fn_getComparacion(3) == true)
+                                        go_CCH_Cargar.sb_DataFormLoadAdd();
+                                    else return;
                                     break;
                                 case Cls_EAR_Crear_Accesos.gs_NomForm:
-                                    go_EAR_Crear_Accesos.sb_DataFormLoad();
+                                    if (Validacion.fn_getComparacion(3) == true)
+                                        go_EAR_Crear_Accesos.sb_DataFormLoad();
+                                    else return;
                                     break;
                                 case Cls_EAR_Apertura.gs_NomForm:
-                                    go_EAR_Apertura.sb_DataFormLoadAdd();
+                                    if (Validacion.fn_getComparacion(3) == true)
+                                        go_EAR_Apertura.sb_DataFormLoadAdd();
+                                    else return;
                                     break;
                                 case Cls_EAR_Carga.gs_NomForm:
-                                    go_EAR_Carga.sb_DataFormLoadAdd();
+                                    if (Validacion.fn_getComparacion(3) == true)
+                                        go_EAR_Carga.sb_DataFormLoadAdd();
+                                    else return;
                                     break;
                                 case Cls_FormsRelacionados.gs_NomFormMaestroEmpleados:
-                                    go_Forms_Relacionados.sb_DataFormLoadAdd();
+                                    if (Validacion.fn_getComparacion(3) == true)
+                                        go_Forms_Relacionados.sb_DataFormLoadAdd();
+                                    else return;
                                     break;
                             }
                         }
@@ -248,10 +262,14 @@ namespace STR_CajaChica_Entregas.UL
                             switch (ls_NmbFrm)
                             {
                                 case Cls_CCH_Crear_Accesos.gs_NomForm:
-                                    go_CCH_Crear_Accesos.sb_EnableItemsByFindMode();
+                                    if (Validacion.fn_getComparacion(3) == true)
+                                        go_CCH_Crear_Accesos.sb_EnableItemsByFindMode();
+                                    else return;
                                     break;
                                 case Cls_EAR_Crear_Accesos.gs_NomForm:
-                                    go_EAR_Crear_Accesos.sb_EnableItemsByFindMode();
+                                    if (Validacion.fn_getComparacion(3) == true)
+                                        go_EAR_Crear_Accesos.sb_EnableItemsByFindMode();
+                                    else return;
                                     break;
                             }
 

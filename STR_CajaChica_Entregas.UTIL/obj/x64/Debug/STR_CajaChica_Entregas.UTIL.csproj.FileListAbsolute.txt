@@ -33,3 +33,12 @@ C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entrega
 C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\STR_CajaChica_Entregas.UTIL.csproj.CoreCompileInputs.cache
 C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\STR_CajaChica_Entregas.UTIL.dll
 C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UTIL\bin\x64\Debug\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UTIL\bin\x64\Debug\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\STR_CajaChica_Entregas.UTIL.csproj.AssemblyReference.cache
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\Interop.SAPbobsCOM.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\Interop.SAPbouiCOM.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\STR_CajaChica_Entregas.UTIL.csproj.ResolveComReference.cache
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\STR_CajaChica_Entregas.UTIL.csproj.CoreCompileInputs.cache
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UTIL\obj\x64\Debug\STR_CajaChica_Entregas.UTIL.pdb

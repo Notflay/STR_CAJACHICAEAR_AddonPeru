@@ -62,3 +62,19 @@ C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entrega
 C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.csproj.CopyComplete
 C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.dll
 C:\Users\rhuamani\Desktop\Caja Chica ER\CCH - EAR\Ver. 2.8\STR_CajaChica_Entregas\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.pdb
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\bin\x64\Debug\STR_CajaChica_Entregas.BL.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\bin\x64\Debug\STR_CajaChica_Entregas.BL.pdb
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\bin\x64\Debug\STR_CajaChica_Entregas.DL.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\bin\x64\Debug\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\bin\x64\Debug\STR_CajaChica_Entregas.DL.pdb
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\bin\x64\Debug\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.csproj.AssemblyReference.cache
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\Interop.SAPbobsCOM.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\Interop.SAPbouiCOM.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.csproj.ResolveComReference.cache
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.Properties.Resources.resources
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.csproj.GenerateResource.cache
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.csproj.CoreCompileInputs.cache
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.csproj.CopyComplete
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.dll
+C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.BL\obj\x64\Debug\STR_CajaChica_Entregas.BL.pdb
