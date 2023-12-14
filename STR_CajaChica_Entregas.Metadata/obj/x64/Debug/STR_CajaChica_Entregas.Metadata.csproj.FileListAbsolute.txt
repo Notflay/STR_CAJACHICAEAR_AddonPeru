@@ -58,3 +58,15 @@ C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.M
 C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\STR_CajaChica_Entregas.Metadata.csproj.CopyComplete
 C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\STR_CajaChica_Entregas.Metadata.dll
 C:\Users\DURBAY\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\STR_CajaChica_Entregas.Metadata.pdb
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\bin\x64\Debug\STR_CajaChica_Entregas.Metadata.dll
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\bin\x64\Debug\STR_CajaChica_Entregas.Metadata.pdb
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\bin\x64\Debug\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\bin\x64\Debug\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\STR_CajaChica_Entregas.Metadata.csproj.AssemblyReference.cache
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\Interop.SAPbouiCOM.dll
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\STR_CajaChica_Entregas.Metadata.csproj.ResolveComReference.cache
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\STR_CajaChica_Entregas.Metadata.csproj.CoreCompileInputs.cache
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\STR_CajaChica_Entregas.Metadata.csproj.CopyComplete
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\STR_CajaChica_Entregas.Metadata.dll
+C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x64\Debug\STR_CajaChica_Entregas.Metadata.pdb

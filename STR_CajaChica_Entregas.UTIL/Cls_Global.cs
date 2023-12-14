@@ -14,7 +14,6 @@ namespace STR_CajaChica_Entregas.UTIL
         public static SAPbobsCOM.BoDataServerTypes go_ServerType;
 
         public static SAPbobsCOM.SBObob go_SBObob = null;
-        public static string gs_hardwarek = "";
         public static void sb_CargarCombo(SAPbouiCOM.ComboBox po_ComboBox, SAPbobsCOM.Recordset po_RecordSet, bool pb_AddInitValue = false)
         {
             try

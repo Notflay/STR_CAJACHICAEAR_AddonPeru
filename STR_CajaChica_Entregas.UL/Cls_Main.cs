@@ -46,15 +46,12 @@ namespace STR_CajaChica_Entregas.UL
                 go_SBOApplication.AppEvent += new SAPbouiCOM._IApplicationEvents_AppEventEventHandler(go_SBOApplication_AppEvent);
                 sb_InitObjects();
                 sb_SetFilters();
-                go_CCH_EAR_Init.sb_VerificarInstalacion();
+                // go_CCH_EAR_Init.sb_VerificarInstalacion();
                 sb_AddMenu();
             }
         }
 
-        public static void sb_CargarHardwareKey(string hardware)
-        {
-            Cls_Global.gs_hardwarek = hardware;
-        }
+
 
         private void sb_InitObjects()
         {
@@ -86,7 +83,7 @@ namespace STR_CajaChica_Entregas.UL
                 {
                     ls_ConectionString = Convert.ToString(Environment.GetCommandLineArgs().GetValue(0));
                 }
-                lo_SBOGUIAPI.Connect(ls_ConectionString);
+                lo_SBOGUIAPI.Connect("0030002C0030002C00530041005000420044005F00440061007400650076002C0050004C006F006D0056004900490056");
                 if (Cls_Global.go_SBOApplication == null)
                 {
                     Cls_Global.go_SBOApplication = lo_SBOGUIAPI.GetApplication(-1);
@@ -106,7 +103,7 @@ namespace STR_CajaChica_Entregas.UL
             {
                 Cls_Global.go_SBOCompany = Cls_Global.go_SBOApplication.Company.GetDICompany();
                 go_SBOCompany = Cls_Global.go_SBOCompany;
-                go_SBOApplication.StatusBar.SetText("Iniciando el Addon de Caja Chica - Entregas a Rendir", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
+                go_SBOApplication.StatusBar.SetText("Addon Perú: Caja Chica - Entregas a Rendir cargando funcionalidades...", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
                 if (Cls_Global.go_SBOCompany != null)
                 {   //Se guarda el tipo de BD
                     //Clase que maneja los queries x BD
@@ -155,13 +152,13 @@ namespace STR_CajaChica_Entregas.UL
         private void sb_AddMenu()
         {
             XmlDocument oMnuXML = new XmlDocument();
-            go_SBOApplication.StatusBar.SetText("CCH-EAR: Cargando opciones de menu...", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
+            //go_SBOApplication.StatusBar.SetText("CCH-EAR: Cargando opciones de menu...", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
             go_SBOApplication.Forms.GetFormByTypeAndCount(169, 1).Freeze(true);
             try
             {
                 oMnuXML.LoadXml(Properties.Resources.Menu);
                 go_SBOApplication.LoadBatchActions(oMnuXML.InnerXml);
-                go_SBOApplication.StatusBar.SetText("El menu del Addon Caja Chica - Entregas a Rendir fue cargado correctamente... ", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
+                go_SBOApplication.StatusBar.SetText("Addon Perú: Caja Chica - Entregas a Rendir fue cargado correctamente... ", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
             }
             catch (System.IO.FileNotFoundException fnfex)
             {
@@ -216,39 +213,25 @@ namespace STR_CajaChica_Entregas.UL
                             switch (ls_NmbFrm)
                             {
                                 case Cls_CCH_Crear_Accesos.gs_NomForm:
-                                    if (Validacion.fn_getComparacion(3) == true)
-                                        go_CCH_Crear_Accesos.sb_DataFormLoad();
-                                    else return;
+                                    go_CCH_Crear_Accesos.sb_DataFormLoad();
                                     break;
                                 case Cls_CCH_Apertura.gs_NomForm:
-                                    if (Validacion.fn_getComparacion(3) == true)
-                                        go_CCH_Aperturar.sb_DataFormLoadAdd();
-                                    else return;
+                                    go_CCH_Aperturar.sb_DataFormLoadAdd();
                                     break;
                                 case Cls_CCH_Carga.gs_NomForm:
-                                    if (Validacion.fn_getComparacion(3) == true)
-                                        go_CCH_Cargar.sb_DataFormLoadAdd();
-                                    else return;
+                                    go_CCH_Cargar.sb_DataFormLoadAdd();
                                     break;
                                 case Cls_EAR_Crear_Accesos.gs_NomForm:
-                                    if (Validacion.fn_getComparacion(3) == true)
-                                        go_EAR_Crear_Accesos.sb_DataFormLoad();
-                                    else return;
+                                    go_EAR_Crear_Accesos.sb_DataFormLoad();
                                     break;
                                 case Cls_EAR_Apertura.gs_NomForm:
-                                    if (Validacion.fn_getComparacion(3) == true)
-                                        go_EAR_Apertura.sb_DataFormLoadAdd();
-                                    else return;
+                                    go_EAR_Apertura.sb_DataFormLoadAdd();
                                     break;
                                 case Cls_EAR_Carga.gs_NomForm:
-                                    if (Validacion.fn_getComparacion(3) == true)
-                                        go_EAR_Carga.sb_DataFormLoadAdd();
-                                    else return;
+                                    go_EAR_Carga.sb_DataFormLoadAdd();
                                     break;
                                 case Cls_FormsRelacionados.gs_NomFormMaestroEmpleados:
-                                    if (Validacion.fn_getComparacion(3) == true)
-                                        go_Forms_Relacionados.sb_DataFormLoadAdd();
-                                    else return;
+                                    go_Forms_Relacionados.sb_DataFormLoadAdd();
                                     break;
                             }
                         }
@@ -262,14 +245,11 @@ namespace STR_CajaChica_Entregas.UL
                             switch (ls_NmbFrm)
                             {
                                 case Cls_CCH_Crear_Accesos.gs_NomForm:
-                                    if (Validacion.fn_getComparacion(3) == true)
-                                        go_CCH_Crear_Accesos.sb_EnableItemsByFindMode();
-                                    else return;
+                                    go_CCH_Crear_Accesos.sb_EnableItemsByFindMode();
                                     break;
                                 case Cls_EAR_Crear_Accesos.gs_NomForm:
-                                    if (Validacion.fn_getComparacion(3) == true)
-                                        go_EAR_Crear_Accesos.sb_EnableItemsByFindMode();
-                                    else return;
+                                    go_EAR_Crear_Accesos.sb_EnableItemsByFindMode();
+
                                     break;
                             }
 

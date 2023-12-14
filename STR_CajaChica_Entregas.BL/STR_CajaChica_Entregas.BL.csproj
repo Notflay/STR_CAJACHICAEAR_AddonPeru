@@ -105,14 +105,12 @@
     <Compile Include="Cls_EAR_Cargar_BL.cs" />
     <Compile Include="Cls_EAR_Crear_Accesos_BL.cs" />
     <Compile Include="Cls_EAR_Regularizar_BL.cs" />
-    <Compile Include="Code.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Validacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\STR_CajaChica_Entregas.DL\STR_CajaChica_Entregas.DL.csproj">
