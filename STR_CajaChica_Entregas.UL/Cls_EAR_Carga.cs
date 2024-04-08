@@ -310,7 +310,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             else
             {
-                ls_Serie = go_Combo.Selected.Value;
+                //ls_Serie = go_Combo.Selected.Value;
             }
             go_Form.Items.Item(gs_MtxDocs).Enabled = false;
             go_Form.DataSources.DBDataSources.Item(gs_DtcEARCRG).SetValue("Series", 0, ls_Serie);

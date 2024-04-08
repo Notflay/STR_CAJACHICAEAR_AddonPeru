@@ -6,11 +6,11 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{8061E4B3-4674-4445-8CD6-331E2A07227F}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>STR_CajaChica_Entregas.UL</RootNamespace>
     <AssemblyName>STR_CajaChica_Entregas.UL</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
@@ -121,24 +121,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\STR_CajaChica_Entregas.BL\STR_CajaChica_Entregas.BL.csproj">
-      <Project>{5BE33387-56E2-433F-8A6A-0A24BC18BB2E}</Project>
-      <Name>STR_CajaChica_Entregas.BL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\STR_CajaChica_Entregas.DL\STR_CajaChica_Entregas.DL.csproj">
-      <Project>{938B4E49-9C71-40E7-B64D-B70C5850D42B}</Project>
-      <Name>STR_CajaChica_Entregas.DL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\STR_CajaChica_Entregas.Metadata\STR_CajaChica_Entregas.Metadata.csproj">
-      <Project>{D0D7F258-56FC-4329-9D68-607D2CFA25D0}</Project>
-      <Name>STR_CajaChica_Entregas.Metadata</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\STR_CajaChica_Entregas.UTIL\STR_CajaChica_Entregas.UTIL.csproj">
-      <Project>{0FFD562E-54B9-4979-9F58-1801592A1E92}</Project>
-      <Name>STR_CajaChica_Entregas.UTIL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -191,6 +173,29 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\STR_CajaChica_Entregas.BL\STR_CajaChica_Entregas.BL.csproj">
+      <Project>{5be33387-56e2-433f-8a6a-0a24bc18bb2e}</Project>
+      <Name>STR_CajaChica_Entregas.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\STR_CajaChica_Entregas.DL\STR_CajaChica_Entregas.DL.csproj">
+      <Project>{938b4e49-9c71-40e7-b64d-b70c5850d42b}</Project>
+      <Name>STR_CajaChica_Entregas.DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\STR_CajaChica_Entregas.Metadata\STR_CajaChica_Entregas.Metadata.csproj">
+      <Project>{d0d7f258-56fc-4329-9d68-607d2cfa25d0}</Project>
+      <Name>STR_CajaChica_Entregas.Metadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\STR_CajaChica_Entregas.UTIL\STR_CajaChica_Entregas.UTIL.csproj">
+      <Project>{0ffd562e-54b9-4979-9f58-1801592a1e92}</Project>
+      <Name>STR_CajaChica_Entregas.UTIL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\CajaChicaEAR\FrmCargarDocumentosEAR.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -125,8 +125,6 @@ C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entrega
 C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x64\Debug\STR_CajaChica_Entregas.UL.csproj.CopyComplete
 C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x64\Debug\STR_CajaChica_Entregas.UL.dll
 C:\Users\Sebastian\source\repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x64\Debug\STR_CajaChica_Entregas.UL.pdb
-C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x64\Debug\STR_CajaChica_Entregas.UL.dll.config
-C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x64\Debug\STR_CajaChica_Entregas.UL.dll
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x64\Debug\STR_CajaChica_Entregas.UL.pdb
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x64\Debug\STR_CajaChica_Entregas.BL.dll
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x64\Debug\STR_CajaChica_Entregas.DL.dll
@@ -144,5 +142,8 @@ C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.U
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x64\Debug\STR_CajaChica_Entregas.UL.csproj.GenerateResource.cache
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x64\Debug\STR_CajaChica_Entregas.UL.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x64\Debug\STR_CajaChica_Entregas.UL.csproj.CopyComplete
-C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x64\Debug\STR_CajaChica_Entregas.UL.dll
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x64\Debug\STR_CajaChica_Entregas.UL.pdb
+C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x64\Debug\STR_CajaChica_Entregas.UL.exe.config
+C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x64\Debug\STR_CajaChica_Entregas.UL.exe
+C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x64\Debug\STR_CajaChica_Entregas.UL.exe
+C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x64\Debug\Resources\CajaChicaEAR\FrmCargarDocumentosEAR.srf

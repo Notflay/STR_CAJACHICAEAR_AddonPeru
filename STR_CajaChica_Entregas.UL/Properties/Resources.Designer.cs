@@ -65,7 +65,7 @@ namespace STR_CajaChica_Entregas.UL.Properties {
         ///&lt;Application&gt;
         ///	&lt;Menus&gt;
         ///		&lt;action type=&quot;add&quot;&gt;
-        ///			&lt;Menu Checked=&quot;0&quot; Enabled=&quot;1&quot; FatherUID=&quot;MNU01&quot; Position=&quot;4&quot; String=&quot;Caja Chica&quot; Type=&quot;2&quot; UniqueID=&quot;MNU_CCH_GENERAL&quot;&gt;
+        ///			&lt;Menu Checked=&quot;0&quot; Enabled=&quot;1&quot; FatherUID=&quot;MNF01&quot; Position=&quot;6&quot; String=&quot;Caja Chica&quot; Type=&quot;2&quot; UniqueID=&quot;MNU_CCH_GENERAL&quot;&gt;
         ///				&lt;Menus&gt;
         ///
         ///					&lt;action type=&quot;add&quot;&gt;
