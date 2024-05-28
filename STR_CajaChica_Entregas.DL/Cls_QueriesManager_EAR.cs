@@ -27,6 +27,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.GenerarCodigoEAR.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0] + ps_CdgCCHEAR + go_ArrCad[1] + "EAR" + go_ArrCad[2];
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet.Fields.Item(0).Value;
             }
@@ -55,6 +56,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtCuentadeBancoPropio.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0] + ps_CdgBnc + go_ArrCad[1] + ps_CdgCta + go_ArrCad[2];
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet.Fields.Item(0).Value;
             }
@@ -82,6 +84,7 @@ namespace STR_CajaChica_Entregas.DL
                 {
                     gs_Qry = Resources.Queries_SQL_HANA_EAR.ObtListadeBancos.Split('|').GetValue(0).ToString();
                 }
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }
@@ -110,6 +113,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtCuentasdeBanco.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_Bnk + go_ArrCad[1].Trim() + ps_Mnd + go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }
@@ -138,6 +142,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ValidarCargaEAR.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0] + ps_EmpID + go_ArrCad[1] + ps_User + go_ArrCad[2];
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 if (go_RecSet.EoF != true && go_RecSet.Fields.Item(0).Value == "Y")
                     return true;
@@ -165,6 +170,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ValidarCerrarCargaEAR.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0] + ps_EmpID + go_ArrCad[1] + ps_User + go_ArrCad[2];
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 if (go_RecSet.EoF != true && go_RecSet.Fields.Item(0).Value == "Y")
                     return true;
@@ -192,6 +198,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ValidarRegularizarSaldosEAR.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0] + ps_EmpID + go_ArrCad[1] + ps_User + go_ArrCad[2];
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 if (go_RecSet.EoF != true && go_RecSet.Fields.Item(0).Value == "Y")
                     return true;
@@ -219,6 +226,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtNumerosdeEntregaaRendirActivos.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0] + ps_EARCod + go_ArrCad[1];
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }
@@ -243,6 +251,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.VerificarCantidadNrosEAR.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_NroEAR + go_ArrCad[1].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return Convert.ToInt32(go_RecSet.Fields.Item(0).Value);
             }
@@ -272,6 +281,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtSaldoEntregasaRendir.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_NroEAR + go_ArrCad[1].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }
@@ -300,6 +310,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ValidarContabEAR.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_Usuario + go_ArrCad[1].Trim() + NmbEAR + go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 if (go_RecSet.EoF != true && go_RecSet.Fields.Item(0).Value == "Y")
                     return true;
@@ -331,6 +342,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.AgruparLineasEAR.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_DocEnt + go_ArrCad[1].Trim() + ps_CodPrv + go_ArrCad[2].Trim() + ps_TpoDoc + go_ArrCad[3].Trim() + ps_SreDoc + go_ArrCad[4].Trim() + ps_CorDoc + go_ArrCad[5].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 if (!go_RecSet.EoF)
                 {
@@ -367,6 +379,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.GenerarDocumentoXML.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_DcEnFrm + go_ArrCad[1].Trim() + ps_Filas + go_ArrCad[2].Trim() + ps_NmbTbl + go_ArrCad[3].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 if (!go_RecSet.EoF)
                 {
@@ -403,6 +416,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ActualizarEstadoCreacion.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_DcDoc + go_ArrCad[1].Trim() + ps_Estado + go_ArrCad[2].Trim() + ps_DcEntFrm + go_ArrCad[3].Trim() + ps_Filas + go_ArrCad[4].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
             }
             catch (Exception ex)
@@ -450,6 +464,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtTransIdPagoaCuenta.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + CodEAR + go_ArrCad[1].Trim() + NmrEAR + go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 if (!go_RecSet.EoF)
                 {
@@ -486,6 +501,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtTotalesXCarga.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_DcEnt + go_ArrCad[1].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }
@@ -514,6 +530,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.VerificarEstadoySaldoNroEAR.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_NmbCCH + go_ArrCad[1].Trim() + ps_NroCCH + go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }
@@ -543,6 +560,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtMontoApertura.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_CdgEAR + go_ArrCad[1].Trim() + ps_NmrEAR + go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }
@@ -572,6 +590,7 @@ namespace STR_CajaChica_Entregas.DL
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_Estado + go_ArrCad[1].Trim() + ps_Saldo + go_ArrCad[2].Trim() + ps_CdgEAR
                          + go_ArrCad[3].Trim() + ps_NroEAR + go_ArrCad[4].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
             }
             catch (Exception ex)
@@ -598,6 +617,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtListaSolicitudesEAR.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_Mnda + go_ArrCad[1].Trim() + ps_Usr + go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }
@@ -626,6 +646,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.GenerarCodigoUnicoPorTU.Split('$').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_NmbTbl + go_ArrCad[1].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet.Fields.Item(0).Value;
             }
@@ -655,6 +676,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.EliminarRegistrosTU.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                     gs_Qry = go_ArrCad[0].Trim() + ps_Tbl + go_ArrCad[1].Trim() + " " + ps_Fld + " " + go_ArrCad[2].Trim() + ps_Cdg + go_ArrCad[3].Trim();
                 }
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
             }
             catch (Exception ex)
@@ -681,6 +703,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtDimensionesXDefecto.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_IdEmp + go_ArrCad[1].Trim() + ps_DimNmb + go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return Convert.ToString(go_RecSet.Fields.Item(0).Value).Trim();
             }
@@ -710,6 +733,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtAsientoCompensacion.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_TpoPgo + go_ArrCad[1].Trim() + ps_KeyPgo + go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 if(!go_RecSet.EoF)
                     li_Result = Convert.ToInt32(go_RecSet.Fields.Item(0).Value);
@@ -742,6 +766,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtCodigoCtaPte.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_FrmtCd + go_ArrCad[1].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 if (!go_RecSet.EoF)
                     ls_Result = go_RecSet.Fields.Item(0).Value;
@@ -773,6 +798,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtDocumentosaReconciliar.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_CdgEAR + go_ArrCad[1].Trim() +ps_NmrEAR+ go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }
@@ -801,6 +827,7 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.VerificarProveedorAsociado.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;
             }

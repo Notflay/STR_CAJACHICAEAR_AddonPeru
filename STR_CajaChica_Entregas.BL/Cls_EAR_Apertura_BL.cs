@@ -211,6 +211,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 pi_CodErr = 999;
                 ps_DscErr = ex.Message;
             }
@@ -242,6 +243,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 Cls_Global.go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
             }
         }

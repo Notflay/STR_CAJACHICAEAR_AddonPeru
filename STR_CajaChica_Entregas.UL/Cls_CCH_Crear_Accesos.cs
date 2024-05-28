@@ -88,6 +88,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 lo_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, true);
             }
             finally
@@ -145,6 +146,7 @@ namespace STR_CajaChica_Entregas.UL
                 }
                 catch (Exception ex)
                 {
+                    Cls_Global.WriteToFile(ex.Message);
                     lo_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, true);
                 }
                 finally
@@ -295,6 +297,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 lo_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             return lb_Result;
@@ -374,11 +377,13 @@ namespace STR_CajaChica_Entregas.UL
 
                     if (lo_ChsFrmLstEvnt.ChooseFromListUID.ToUpper() != "CFLUSER" && lo_ChsFrmLstEvnt.ChooseFromListUID.ToUpper() != "CFLCODPRY")
                     {
+                        // Obtener el objeto ChooseFromList basado en el evento
                         lo_ChsFrmLst = go_Form.ChooseFromLists.Item(lo_ChsFrmLstEvnt.ChooseFromListUID);
                         lo_ChsFrmLst.SetConditions(null);
                         lo_Cnds = lo_ChsFrmLst.GetConditions();
-                        lo_Cnd = lo_Cnds.Add();
 
+                        // Agregar primera condición basada en el valor del combo box
+                        lo_Cnd = lo_Cnds.Add();
                         lo_Cnd.Alias = "ActCurr";
                         lo_Cnd.Operation = SAPbouiCOM.BoConditionOperation.co_EQUAL;
                         go_Combo = go_Form.Items.Item(gs_CmbMoneda).Specific;
@@ -390,11 +395,35 @@ namespace STR_CajaChica_Entregas.UL
                         {
                             lo_Cnd.CondVal = go_Combo.Selected.Value;
                         }
+
+                        // Relación OR para la siguiente condición
                         lo_Cnd.Relationship = SAPbouiCOM.BoConditionRelationship.cr_AND;
+
                         lo_Cnd = lo_Cnds.Add();
                         lo_Cnd.Alias = "U_CE_ACCT";
                         lo_Cnd.Operation = SAPbouiCOM.BoConditionOperation.co_EQUAL;
                         lo_Cnd.CondVal = "Y";
+
+                        // Agregar la segunda condición para el valor "##"
+
+                        lo_Cnd.Relationship = SAPbouiCOM.BoConditionRelationship.cr_OR;
+
+                        lo_Cnd = lo_Cnds.Add();
+                        lo_Cnd.Alias = "ActCurr";
+                        lo_Cnd.Operation = SAPbouiCOM.BoConditionOperation.co_EQUAL;
+                        lo_Cnd.CondVal = "##";
+
+                        // Relación AND para la siguiente condición
+                        lo_Cnd.Relationship = SAPbouiCOM.BoConditionRelationship.cr_AND;
+
+                        // Agregar la tercera condición que siempre debe cumplirse (AND)
+
+                        lo_Cnd = lo_Cnds.Add();
+                        lo_Cnd.Alias = "U_CE_ACCT";
+                        lo_Cnd.Operation = SAPbouiCOM.BoConditionOperation.co_EQUAL;
+                        lo_Cnd.CondVal = "Y";
+
+                        // Aplicar las condiciones al objeto ChooseFromList
                         lo_ChsFrmLst.SetConditions(lo_Cnds);
                     }
                     if (lo_ChsFrmLstEvnt.ChooseFromListUID.ToUpper() == "CFLUSER")
@@ -429,13 +458,31 @@ namespace STR_CajaChica_Entregas.UL
                             {
                                 if (lo_ChsFrmLstEvnt.ChooseFromListUID.ToUpper() == "ACCT")
                                 {
-                                    go_Edit = go_Form.Items.Item(gs_EdtCuenta).Specific;
-                                    ls_SelectedValue = lo_DtaTbl.GetValue("AcctCode", 0);
-                                    go_Form.DataSources.DBDataSources.Item(go_Edit.DataBind.TableName).SetValue(go_Edit.DataBind.Alias, 0, ls_SelectedValue);
-                                    go_Static = go_Form.Items.Item(gs_SttAcctName).Specific;
-                                    go_Static.Caption = lo_DtaTbl.GetValue("AcctName", 0);
-                                    go_Edit = go_Form.Items.Item(gs_EdtFormatCode).Specific;
-                                    go_Edit.Value = lo_DtaTbl.GetValue("FormatCode", 0);
+                                    string ls_moneda = "";
+                                    go_Combo = go_Form.Items.Item(gs_CmbMoneda).Specific;
+                                    if (go_Combo.Selected != null)
+                                    {
+                                        ls_moneda = go_Combo.Selected.Value;
+                                    }
+
+                                    string ls_monedaDtb = lo_DtaTbl.GetValue("ActCurr", 0) == "##" ? "SOL" : lo_DtaTbl.GetValue("ActCurr", 0);
+
+                                    if (ls_moneda == ls_monedaDtb)
+                                    {
+                                        go_Edit = go_Form.Items.Item(gs_EdtCuenta).Specific;
+                                        ls_SelectedValue = lo_DtaTbl.GetValue("AcctCode", 0);
+                                        go_Form.DataSources.DBDataSources.Item(go_Edit.DataBind.TableName).SetValue(go_Edit.DataBind.Alias, 0, ls_SelectedValue);
+                                        go_Static = go_Form.Items.Item(gs_SttAcctName).Specific;
+                                        go_Static.Caption = lo_DtaTbl.GetValue("AcctName", 0);
+                                        go_Edit = go_Form.Items.Item(gs_EdtFormatCode).Specific;
+                                        go_Edit.Value = lo_DtaTbl.GetValue("FormatCode", 0);
+                                    }
+                                    else {
+                                        go_Edit = go_Form.Items.Item(gs_EdtCuenta).Specific;
+                                        go_Form.DataSources.DBDataSources.Item(go_Edit.DataBind.TableName).SetValue(go_Edit.DataBind.Alias, 0, null);
+   
+                                        throw new Exception("Moneda escogida no es igual al de la Cuenta Contable");
+                                    }
                                 }
                                 if (lo_ChsFrmLstEvnt.ChooseFromListUID.ToUpper() == "CFLCODPRY")
                                 {
@@ -456,6 +503,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 lo_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
 
@@ -473,6 +521,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 lo_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -549,6 +598,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 lo_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally

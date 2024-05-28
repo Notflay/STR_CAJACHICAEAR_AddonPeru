@@ -75,3 +75,15 @@ C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.M
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\STR_CajaChica_Entregas.Metadata.csproj.CopyComplete
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\STR_CajaChica_Entregas.Metadata.dll
 C:\Users\LENOVO\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\STR_CajaChica_Entregas.Metadata.pdb
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\bin\x86\Debug\STR_CajaChica_Entregas.Metadata.dll
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\bin\x86\Debug\STR_CajaChica_Entregas.Metadata.pdb
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\bin\x86\Debug\STR_CajaChica_Entregas.UTIL.dll
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\bin\x86\Debug\STR_CajaChica_Entregas.UTIL.pdb
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\STR_CajaChica_Entregas.Metadata.csproj.AssemblyReference.cache
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\Interop.SAPbouiCOM.dll
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\STR_CajaChica_Entregas.Metadata.csproj.ResolveComReference.cache
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\STR_CajaChica_Entregas.Metadata.csproj.CoreCompileInputs.cache
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\STR_Caja.0A40F646.Up2Date
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\STR_CajaChica_Entregas.Metadata.dll
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.Metadata\obj\x86\Debug\STR_CajaChica_Entregas.Metadata.pdb

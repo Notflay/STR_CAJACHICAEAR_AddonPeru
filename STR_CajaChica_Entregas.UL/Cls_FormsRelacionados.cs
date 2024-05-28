@@ -724,6 +724,7 @@ namespace STR_CajaChica_Entregas.UL
                                     ls_CdgCta = lo_DataTable.GetValue("U_BPP_ACCT", 0);
                                     lo_ArrCad = Cls_QueriesManager_CCH.NumerosdeCCHActivos.Split(new char[] { '?' });
                                     ls_Qry = lo_ArrCad[0].Trim() + lo_DataTable.GetValue(0, 0) + lo_ArrCad[1].Trim();
+                                    Cls_Global.WriteToFile(ls_Qry);
                                     lo_RecSet.DoQuery(ls_Qry);
                                 }
                                 else                                

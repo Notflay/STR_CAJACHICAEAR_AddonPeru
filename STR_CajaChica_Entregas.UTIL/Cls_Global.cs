@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SAPbobsCOM;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -10,6 +12,7 @@ namespace STR_CajaChica_Entregas.UTIL
         //Declaracion de variables que seran utilizadas por todo el proyecto
         public static SAPbobsCOM.Company go_SBOCompany = null;
         public static SAPbouiCOM.Application go_SBOApplication = null;
+        public static bool segmentado = false;
 
         public static SAPbobsCOM.BoDataServerTypes go_ServerType;
 
@@ -64,6 +67,30 @@ namespace STR_CajaChica_Entregas.UTIL
                 go_SBOCompany.GetLastError(out pi_CodErr, out ps_DscErr);
             }
             return ld_TpoCmb;
+        }
+
+        public static void WriteToFile(string Message)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "\\Logs";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            string filepath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Logs\\Service_Creation_Log_{DateTime.Now.Date.ToShortDateString().Replace('/', '_')}.txt";
+            if (!File.Exists(filepath))
+            {
+                using (StreamWriter sw = File.CreateText(filepath))
+                {
+                    sw.WriteLine(DateTime.Now.ToString() + " - " + Message);
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.AppendText(filepath))
+                {
+                    sw.WriteLine(DateTime.Now.ToString() + " - " + Message);
+                }
+            }
         }
 
         public static SAPbouiCOM.Form fn_CreateForm(string ps_NomForm, string ps_RutaForm)

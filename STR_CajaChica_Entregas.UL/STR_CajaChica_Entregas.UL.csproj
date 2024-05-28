@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{8061E4B3-4674-4445-8CD6-331E2A07227F}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>STR_CajaChica_Entregas.UL</RootNamespace>
     <AssemblyName>STR_CajaChica_Entregas.UL</AssemblyName>
@@ -128,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="BO\UF.vte" />
+    <None Include="BO\UO.vte" />
+    <None Include="BO\UT.vte" />
     <None Include="Resources\Menu.xml">
       <SubType>Designer</SubType>
     </None>
@@ -155,26 +158,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="SAPbobsCOM">
-      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
-      <VersionMajor>9</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="SAPbouiCOM">
-      <Guid>{6048236A-956D-498D-A6F1-9C81C13AB6E8}</Guid>
-      <VersionMajor>9</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\STR_CajaChica_Entregas.BL\STR_CajaChica_Entregas.BL.csproj">
       <Project>{5be33387-56e2-433f-8a6a-0a24bc18bb2e}</Project>
       <Name>STR_CajaChica_Entregas.BL</Name>
@@ -193,9 +176,86 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\CajaChicaEAR\AperturarCaja.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CajaChicaEAR\CajasChicas.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CajaChicaEAR\FrmAccesosEAR.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CajaChicaEAR\FrmAperturaEAR.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CajaChicaEAR\FrmCargarDocumentos.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\CajaChicaEAR\FrmCargarDocumentosEAR.srf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\CajaChicaEAR\FrmDimDefault.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CajaChicaEAR\FrmRegularizarSaldos.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\HANA\STR_SP_ActualizarDatosPorReaperturaCCH.sql" />
+    <Content Include="Scripts\HANA\STR_SP_CantidadNumerosdeCajaChica.sql" />
+    <Content Include="Scripts\HANA\STR_SP_Create_OPCH_XML.sql" />
+    <Content Include="Scripts\HANA\STR_SP_GenerarCodigo_CCH_EAR.sql" />
+    <Content Include="Scripts\HANA\STR_SP_INT_AgruparLineasCCH.sql" />
+    <Content Include="Scripts\HANA\STR_SP_LOC_AgruparLineasEAR.sql" />
+    <Content Include="Scripts\HANA\STR_SP_LOC_DocumentosaReconciliar.sql" />
+    <Content Include="Scripts\HANA\STR_SP_LOC_InfoTotalesPorCargaDocumentosCCH.sql" />
+    <Content Include="Scripts\HANA\STR_SP_LOC_InfoTotalesPorCargaDocumentosEAR.sql" />
+    <Content Include="Scripts\HANA\STR_SP_LOC_ListarSolicitudesEntregaRendir.sql" />
+    <Content Include="Scripts\HANA\STR_SP_LOC_NumerosEntregaaRendirActivos.sql" />
+    <Content Include="Scripts\HANA\STR_SP_LOC_PagosRealizadosPorNumero_CCH_EAR.sql" />
+    <Content Include="Scripts\HANA\STR_SP_LOC_SaldoNumerosEntregaaRendir.sql" />
+    <Content Include="Scripts\HANA\STR_SP_NumerosCajaChicaActivos.sql" />
+    <Content Include="Scripts\HANA\STR_SP_PagosRealizadosPorNumerodeCaja.sql" />
+    <Content Include="Scripts\HANA\STR_SP_SaldoNumerosCajaChica.sql" />
+    <Content Include="Scripts\HANA\STR_SP_Valida_CCH_EAR.sql" />
+    <Content Include="Scripts\HANA\STR_SP_Verificar_Documento_Existente.sql" />
+    <Content Include="Scripts\SQL\STR_SP_ActualizarDatosPorReaperturaCCH.sql" />
+    <Content Include="Scripts\SQL\STR_SP_CantidadNumerosdeCajaChica.sql" />
+    <Content Include="Scripts\SQL\STR_SP_GenerarCodigo_CCH_EAR.sql" />
+    <Content Include="Scripts\SQL\STR_SP_INT_AgruparLineasCCH.sql" />
+    <Content Include="Scripts\SQL\STR_SP_LOC_AgruparLineasEAR.sql" />
+    <Content Include="Scripts\SQL\STR_SP_LOC_Create_OPCH_XML.sql" />
+    <Content Include="Scripts\SQL\STR_SP_LOC_DocumentosaReconciliar.sql" />
+    <Content Include="Scripts\SQL\STR_SP_LOC_InfoTotalesPorCargaDocumentosCCH.sql" />
+    <Content Include="Scripts\SQL\STR_SP_LOC_InfoTotalesPorCargaDocumentosEAR.sql" />
+    <Content Include="Scripts\SQL\STR_SP_LOC_ListarSolicitudesEntregaRendir.sql" />
+    <Content Include="Scripts\SQL\STR_SP_LOC_NumerosEntregaaRendirActivos.sql" />
+    <Content Include="Scripts\SQL\STR_SP_LOC_PagosRealizadosPorNumero_CCH_EAR.sql" />
+    <Content Include="Scripts\SQL\STR_SP_LOC_SaldoNumerosEntregaaRendir.sql" />
+    <Content Include="Scripts\SQL\STR_SP_NumerosCajaChicaActivos.sql" />
+    <Content Include="Scripts\SQL\STR_SP_RendicionMovimientos.sql" />
+    <Content Include="Scripts\SQL\STR_SP_SaldoNumerosCajaChica.sql" />
+    <Content Include="Scripts\SQL\STR_SP_Valida_CCH_EAR.sql" />
+    <Content Include="Scripts\SQL\STR_SP_Verificar_Documento_Existente.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30100}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SAPbouiCOM">
+      <Guid>{6048236A-956D-498D-A6F1-9C81C13AB6E8}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

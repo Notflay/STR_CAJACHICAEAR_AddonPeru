@@ -56,6 +56,7 @@ namespace STR_CajaChica_Entregas.UL
         private string gs_UflDetDocRtn = "U_CC_RTNC";
         private string gs_UflDetDocEst = "U_CC_ESTD";
         private string gs_UflDetTotLin = "U_CC_TTLN";
+        private string gs_UflDetDsct = "U_CC_DSCT";
         ////* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
         ////* * * * * * * * * * * * User Data Sources * * * * * * * * * * * * * *
@@ -95,6 +96,7 @@ namespace STR_CajaChica_Entregas.UL
         private string gs_ClmMtxNroCta = "clmNroCta";
         private string gs_ClmMtxNmbCta = "clmNmbCta";
         private string gs_ClmMtxDscSrv = "clmDscSrv";
+        private string gs_ClmMtxPartid = "clmCmp1";
         private string gs_ClmMtxMoneda = "clmMnds";
         private string gs_ClmMtxFchDcm = "clmFchDcm";
         private string gs_ClmMtxPrcUni = "clmPrcUni";
@@ -157,6 +159,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
         }
@@ -201,16 +204,18 @@ namespace STR_CajaChica_Entregas.UL
                 go_Matrix.Columns.Item("clmDocEnt").Visible = false;
                 go_Matrix.Columns.Item("clmEstCre").Visible = false;
                 //go_Matrix.Columns.Item("clmTtLn").Visible = false;
-                go_Matrix.Columns.Item("Col_19").Visible = false;
+                //go_Matrix.Columns.Item("Col_19").Visible = false;
                 go_Matrix.Columns.Item("clmCodCta").Visible = false;
-                go_Matrix.Columns.Item("clmNroCta").Visible = false;
-                go_Matrix.Columns.Item("clmNmbCta").Visible = false;
+                //go_Matrix.Columns.Item("clmNroCta").Visible = false;
+                //go_Matrix.Columns.Item("clmCmp1").Visible = true;
+                //go_Matrix.Columns.Item("clmNmbCta").Visible = true;
                 go_Matrix.Columns.Item("clmDscSrv").Visible = false;
                 sb_AddUserColumnsToMatrix();
                 go_Matrix.AddRow();
 
                 go_Form.DataSources.DBDataSources.Item(gs_DtcCCHCRG).SetValue(gs_UflFchCre, 0, go_SBOCompany.GetCompanyDate().ToString("yyyyMMdd"));
                 ls_Qry = Cls_QueriesManager_CCH.TiposDeDocumentos;
+                Cls_Global.WriteToFile(ls_Qry);
                 lo_RecSet.DoQuery(ls_Qry);
                 go_Combo = go_Matrix.Columns.Item(gs_ClmMtxTpoDoc).Cells.Item(1).Specific;
                 Cls_Global.sb_CargarCombo(go_Combo, lo_RecSet);
@@ -291,6 +296,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -366,6 +372,7 @@ namespace STR_CajaChica_Entregas.UL
                 }
                 catch (Exception ex)
                 {
+                    Cls_Global.WriteToFile(ex.Message);
                 }
                 finally
                 {
@@ -480,6 +487,7 @@ namespace STR_CajaChica_Entregas.UL
                                             if (go_Form.DataSources.DBDataSources.Item(gs_DtdCCHCRGDET).GetValue(gs_UflDetDocEst, i).Trim().ToUpper() != "ERR") continue;
                                             lo_ArrCad = Cls_QueriesManager_CCH.ActualizarEstadodeCreacion.Split(new char[] { '?' });
                                             ls_Qry = lo_ArrCad[0].Trim() + string.Empty + lo_ArrCad[1].Trim() + "CRE" + lo_ArrCad[2].Trim() + go_Form.DataSources.DBDataSources.Item(gs_DtcCCHCRG).GetValue("DocEntry", 0).Trim() + lo_ArrCad[3].Trim() + go_Form.DataSources.DBDataSources.Item(gs_DtdCCHCRGDET).GetValue("LineId", i).Trim() + lo_ArrCad[4].Trim();
+                                            Cls_Global.WriteToFile(ls_Qry);
                                             lo_RecSet.DoQuery(ls_Qry);
                                         }
                                         go_Form.DataSources.DBDataSources.Item(gs_DtdCCHCRGDET).Query(lo_Cnds);
@@ -502,6 +510,7 @@ namespace STR_CajaChica_Entregas.UL
                                     }
                                     catch (Exception ex)
                                     {
+                                        Cls_Global.WriteToFile(ex.Message);
                                         go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
                                     }
                                 }
@@ -572,6 +581,7 @@ namespace STR_CajaChica_Entregas.UL
                 go_Grid = go_Form.Items.Item(gs_GrdDocs).Specific;
                 lo_ArrCad = Cls_QueriesManager_CCH.PagosPorNrosCCH.Split(new char[] { '?' });
                 ls_Qry = lo_ArrCad[0].Trim() + ls_CodCCH + lo_ArrCad[1].Trim() + ls_NmrCCH + lo_ArrCad[2].Trim() + "CCH" + lo_ArrCad[3].Trim();
+                Cls_Global.WriteToFile(ls_Qry);
                 go_Grid.DataTable.ExecuteQuery(ls_Qry);
                 lo_EdtTxtClm = (SAPbouiCOM.EditTextColumn)go_Grid.Columns.Item("DED");
                 lo_EdtTxtClm.LinkedObjectType = "18";
@@ -586,6 +596,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -619,6 +630,7 @@ namespace STR_CajaChica_Entregas.UL
                                     {
                                         lo_ArrCad = Cls_QueriesManager_CCH.SaldoCajaChica.Split(new char[] { '?' });
                                         ls_Qry = lo_ArrCad[0].Trim() + go_Combo.Value.Trim() + lo_ArrCad[1].Trim();
+                                        Cls_Global.WriteToFile(ls_Qry);
                                         lo_RecSet.DoQuery(ls_Qry);
                                         if (!lo_RecSet.EoF)
                                         {
@@ -657,6 +669,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -708,6 +721,7 @@ namespace STR_CajaChica_Entregas.UL
                                 go_Static.Caption = string.Empty;
                                 lo_ArrCad = Cls_QueriesManager_CCH.NumerosdeCCHActivos.Split(new char[] { '?' });
                                 ls_Qry = lo_ArrCad[0].Trim() + lo_DataTable.GetValue(0, 0) + lo_ArrCad[1].Trim();
+                                Cls_Global.WriteToFile(ls_Qry);
                                 lo_RecSet.DoQuery(ls_Qry);
                                 Cls_Global.sb_CargarCombo(go_Combo, lo_RecSet);
                                 sb_AddStandarDataToNewRow(1);
@@ -872,6 +886,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -918,6 +933,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             return lb_Result;
@@ -943,6 +959,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -1148,6 +1165,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -1353,6 +1371,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -1399,6 +1418,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -1417,6 +1437,7 @@ namespace STR_CajaChica_Entregas.UL
             lo_RecSet = go_SBOCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
             lo_ArrCad = Cls_QueriesManager_CCH.VerificarDocumentoExistente.Split(new char[] { '?' });
             ls_Qry = lo_ArrCad[0].Trim() + ps_NumUni + lo_ArrCad[1].Trim() + ps_CardCode + lo_ArrCad[2].Trim();
+            Cls_Global.WriteToFile(ls_Qry);
             lo_RecSet.DoQuery(ls_Qry);
             if (!lo_RecSet.EoF)
             {
@@ -1440,6 +1461,7 @@ namespace STR_CajaChica_Entregas.UL
             lo_RecSet = go_SBOCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
             lo_ArrCad = Cls_QueriesManager_CCH.ValidarPermisosCargaCCH.Split(new char[] { '?' });
             ls_Qry = lo_ArrCad[0].Trim() + ps_User + lo_ArrCad[1].Trim() + ps_NroCCH + lo_ArrCad[2].Trim();
+            Cls_Global.WriteToFile(ls_Qry);
             lo_RecSet.DoQuery(ls_Qry);
             if (!lo_RecSet.EoF)
             {
@@ -1497,6 +1519,7 @@ namespace STR_CajaChica_Entregas.UL
             lo_RecSet = go_SBOCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
             lo_ArrCad = Cls_QueriesManager_CCH.SaldoCajaChica.Split(new char[] { '?' });
             ls_Qry = lo_ArrCad[0].Trim() + go_Form.DataSources.DBDataSources.Item(gs_DtcCCHCRG).GetValue(gs_UflCCHNmr, 0).Trim() + lo_ArrCad[1].Trim();
+            Cls_Global.WriteToFile(ls_Qry);
             lo_RecSet.DoQuery(ls_Qry);
             if (!lo_RecSet.EoF)
             {
@@ -1530,11 +1553,13 @@ namespace STR_CajaChica_Entregas.UL
                 {
                     ls_Qry = @"SELECT TableID,'U_'+AliasID,FieldID,RTable FROM CUFD WHERE TableID = '@STR_CCHCRGDET' AND LEFT(AliasID,2) = 'CU'";
                 }
+                Cls_Global.WriteToFile(ls_Qry);
                 lo_RecSet.DoQuery(ls_Qry);
                 while (!lo_RecSet.EoF)
                 {
                     //Verifico si el campo de usuario tiene valores validos
                     ls_Qry = @"SELECT COUNT('A') FROM UFD1 WHERE ""TableID"" = '" + lo_RecSet.Fields.Item(0).Value + @"' AND ""FieldID"" = " + lo_RecSet.Fields.Item(2).Value;
+                    Cls_Global.WriteToFile(ls_Qry);
                     lo_RecSetAux.DoQuery(ls_Qry);
                     if (Convert.ToInt32(lo_RecSetAux.Fields.Item(0).Value) != 0)
                     {
@@ -1546,6 +1571,7 @@ namespace STR_CajaChica_Entregas.UL
                         lo_ClmMtx = go_Matrix.Columns.Add(lo_RecSet.Fields.Item(1).Value, SAPbouiCOM.BoFormItemTypes.it_COMBO_BOX);
                         lo_ClmMtx.DataBind.SetBound(true, lo_RecSet.Fields.Item(0).Value, lo_RecSet.Fields.Item(1).Value);
                         ls_Qry = @"SELECT ""Code"",""Name"" FROM ""@" + lo_RecSet.Fields.Item(3).Value + @"""";
+                        Cls_Global.WriteToFile(ls_Qry);
                         lo_RecSetAux2.DoQuery(ls_Qry);
                         while (!lo_RecSetAux2.EoF)
                         {
@@ -1567,6 +1593,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
             }
             finally
@@ -1653,6 +1680,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally

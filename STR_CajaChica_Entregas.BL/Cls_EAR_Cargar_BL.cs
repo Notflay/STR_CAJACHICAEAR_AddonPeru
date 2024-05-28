@@ -110,7 +110,9 @@ namespace STR_CajaChica_Entregas.BL
                                     if (go_SBOCompany.InTransaction) go_SBOCompany.EndTransaction(SAPbobsCOM.BoWfTransOpt.wf_RollBack);
                                 }
                                 catch (Exception ex)
-                                { }
+                                {
+                                    Cls_Global.WriteToFile(ex.Message);
+                                }
                                 go_SBOCompany.GetLastError(out pi_CodErr, out ps_DscErr);
                                 Cls_Global.go_SBOApplication.StatusBar.SetText(pi_CodErr + " - " + ps_DscErr, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
                                 Cls_QueriesManager_EAR.ActualizarEstadodeCreacion(string.Empty, "ERR", ls_DocEntFrm, ls_Filas);
@@ -152,6 +154,7 @@ namespace STR_CajaChica_Entregas.BL
                                     }
                                     catch (Exception ex)
                                     {
+                                        Cls_Global.WriteToFile(ex.Message);
                                         Cls_Global.go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
                                     }
                                     sb_UpdateDataMatrix(ref po_Form);
@@ -165,6 +168,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 ps_DscErr = ex.Message;
                 pi_CodErr = -1;
                 Cls_Global.go_SBOApplication.StatusBar.SetText(ps_DscErr, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
@@ -213,6 +217,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 Cls_Global.go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
             finally
@@ -304,7 +309,9 @@ namespace STR_CajaChica_Entregas.BL
                         if (go_SBOCompany.InTransaction) go_SBOCompany.EndTransaction(SAPbobsCOM.BoWfTransOpt.wf_RollBack);
                     }
                     catch (Exception ex)
-                    { }
+                    {
+                        Cls_Global.WriteToFile(ex.Message);
+                    }
                     go_SBOCompany.GetLastError(out pi_CodErr, out ps_DscErr);
                     Cls_Global.go_SBOApplication.StatusBar.SetText(pi_CodErr + " - " + ps_DscErr, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
                     lb_Result = false;
@@ -322,6 +329,7 @@ namespace STR_CajaChica_Entregas.BL
                             }
                             catch (Exception ex)
                             {
+                                Cls_Global.WriteToFile(ex.Message);
                                 Cls_Global.go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
                             }
                             lb_Result = false;
@@ -334,6 +342,7 @@ namespace STR_CajaChica_Entregas.BL
                             }
                             catch (Exception ex)
                             {
+                                Cls_Global.WriteToFile(ex.Message);
                                 Cls_Global.go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
                                 lb_Result = false;
                             }
@@ -348,6 +357,7 @@ namespace STR_CajaChica_Entregas.BL
                         }
                         catch (Exception ex)
                         {
+                            Cls_Global.WriteToFile(ex.Message);
                             Cls_Global.go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
                         }
                         lb_Result = false;
@@ -357,6 +367,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 pi_CodErr = -1;
                 ps_DscErr = ex.Message;
                 Cls_Global.go_SBOApplication.StatusBar.SetText(pi_CodErr + " - " + ps_DscErr, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
@@ -419,6 +430,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 pi_CodErr = -1;
                 ps_DscErr = ex.Message;
             }
@@ -454,6 +466,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 Cls_Global.go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
             }
 
@@ -511,6 +524,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 Cls_Global.go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
                 return false;
             }

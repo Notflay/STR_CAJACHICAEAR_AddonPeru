@@ -89,6 +89,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 ps_DscErr = ex.Message;
                 pi_CodErr = -1;
             }
@@ -107,6 +108,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch(Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 ps_DscErr = ex.Message;
                 pi_CodErr = -1;
             }
@@ -152,6 +154,7 @@ namespace STR_CajaChica_Entregas.BL
                         lo_PgoEfc.Checks.Branch = lo_DBDSCCHAPR.GetValue(gs_UflMndCaja, 0).Trim();
                         lo_ArrCad = Cls_QueriesManager_CCH.CuentadeBancoPropio.Split(new char[] { '?' });
                         ls_Qry = lo_ArrCad[0] + lo_DBDSCCHAPR.GetValue(gs_UflChqBnc, 0).Trim() + lo_ArrCad[1] + lo_DBDSCCHAPR.GetValue(gs_UflCtaCnt, 0).Trim() + lo_ArrCad[2];
+                        Cls_Global.WriteToFile(ls_Qry);
                         lo_RecSet.DoQuery(ls_Qry);
                         if (lo_RecSet.EoF)
                         {
@@ -234,6 +237,7 @@ namespace STR_CajaChica_Entregas.BL
                         }
                         break;
                 }
+                
                 for (int i = 0; i < lo_DBDSCCHAPRDET.Size; i++)
                 {
                     lo_DBDSCCHAPRDET.Offset = i;
@@ -253,6 +257,7 @@ namespace STR_CajaChica_Entregas.BL
                 }
                 //Valido si se ha sobrepasado el saldo de la cuenta
                 ls_Qry = @"SELECT ""AcctCode"" FROM OACT WHERE ""AcctCode"" = '" + ls_CdgCta + "'";
+                Cls_Global.WriteToFile(ls_Qry);
                 lo_RecSet.DoQuery(ls_Qry);
                 if (!lo_RecSet.EoF)
                 { 
@@ -312,6 +317,7 @@ namespace STR_CajaChica_Entregas.BL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 ps_DscErr = ex.Message;
                 pi_CodErr = -1;
             }

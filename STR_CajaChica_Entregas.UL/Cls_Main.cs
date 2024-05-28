@@ -8,6 +8,7 @@ using STR_CajaChica_Entregas.Metadata;
 using STR_CajaChica_Entregas.UTIL;
 using STR_CajaChica_Entregas.DL;
 using STR_CajaChica_Entregas.BL;
+using SAPbobsCOM;
 
 namespace STR_CajaChica_Entregas.UL
 {
@@ -90,6 +91,8 @@ namespace STR_CajaChica_Entregas.UL
                     go_SBOApplication = Cls_Global.go_SBOApplication;
                 }
                 if (Cls_Global.go_SBOApplication != null) sb_SetCompany();
+
+                ValidarSegmentado();
             }
             catch (Exception ex)
             {
@@ -97,6 +100,28 @@ namespace STR_CajaChica_Entregas.UL
             }
         }
 
+        private void ValidarSegmentado()
+        {
+            try
+            {
+                Recordset oRecordSet = (Recordset)Cls_Global.go_SBOCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+                Cls_Global.WriteToFile("SELECT \"EnbSgmnAct\" FROM CINF");
+                oRecordSet.DoQuery("SELECT \"EnbSgmnAct\" FROM CINF");
+               // Global.WriteToFile("SELECT \"EnbSgmnAct\" FROM CINF");
+
+                if (oRecordSet.Fields.Count < 1)
+                {
+                   // Global.WriteToFile("No se cuenta con segmento activo");
+                    throw new Exception("No se cuenta con segmento activo");
+                }
+                Cls_Global.segmentado = oRecordSet.Fields.Item(0).Value.Equals("Y");
+            }
+            catch (Exception)
+            {
+                
+               // throw;
+            }
+        }
         private void sb_SetCompany()
         {
             try

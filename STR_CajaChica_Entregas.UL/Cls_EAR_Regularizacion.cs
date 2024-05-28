@@ -351,6 +351,32 @@ namespace STR_CajaChica_Entregas.UL
                     lo_Form.Items.Item("120000005").Click(SAPbouiCOM.BoCellClickType.ct_Regular);
                     lo_Edit = lo_Form.Items.Item("120000008").Specific;
                     lo_Edit.Value = lo_EmpInf.UserFields.Fields.Item("U_CE_PVAS").Value;
+
+                    /*
+                    lo_Form.Items.Item("120000002").Click(SAPbouiCOM.BoCellClickType.ct_Regular);
+                    lo_Form2 = Cls_Global.go_SBOApplication.Forms.GetForm("120060805", 1);
+                    lo_Matrix = lo_Form2.Items.Item("120000039").Specific;
+                    lo_Matrix.Columns.Item("120000005").TitleObject.Sort(SAPbouiCOM.BoGridSortType.gst_Ascending);
+
+                    //lo_Form2.Visible = false;
+                    while (!lo_RecSet.EoF)
+                    {
+                        for (int i = 0; i < lo_Matrix.RowCount; i++)
+                        {
+                            lo_Edit = lo_Matrix.Columns.Item("120000003").Cells.Item(i + 1).Specific;
+                            if (lo_Edit.Value == Convert.ToString(lo_RecSet.Fields.Item("NRO").Value))
+                            {
+                                lo_CheckBox = lo_Matrix.Columns.Item("120000002").Cells.Item(i + 1).Specific;
+                                lo_CheckBox.Checked = true;
+                                break;
+                            }
+                        }
+                        lo_RecSet.MoveNext();
+                    }
+                    lo_Form2.Items.Item("120000002").Click(SAPbouiCOM.BoCellClickType.ct_Regular);
+                    lo_Form2 = go_SBOApplication.Forms.ActiveForm;
+                    lo_Form2.Items.Item("120000002").Click(SAPbouiCOM.BoCellClickType.ct_Regular);*/
+                    
                     lo_Form.Items.Item("120000001").Click(SAPbouiCOM.BoCellClickType.ct_Regular);
                     lo_Form2 = Cls_Global.go_SBOApplication.Forms.GetForm("120060805", 1);
                     lo_Matrix = lo_Form2.Items.Item("120000039").Specific;
@@ -373,7 +399,15 @@ namespace STR_CajaChica_Entregas.UL
                     }
                     lo_Form2.Items.Item("120000001").Click(SAPbouiCOM.BoCellClickType.ct_Regular);
                     lo_Form2 = go_SBOApplication.Forms.ActiveForm;
-                    lo_Form2.Items.Item("120000001").Click(SAPbouiCOM.BoCellClickType.ct_Regular);
+                    try
+                    {
+                        lo_Form2.Items.Item("120000001").Click(SAPbouiCOM.BoCellClickType.ct_Regular);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    
                     if (go_SBOApplication.Forms.ActiveForm.TypeEx != "120060805")
                         return true;
                     else

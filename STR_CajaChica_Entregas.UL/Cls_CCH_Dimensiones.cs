@@ -47,12 +47,15 @@ namespace STR_CajaChica_Entregas.UL
                     }
                 }
                 catch (Exception ex)
-                { }
+                {
+                    Cls_Global.WriteToFile(ex.Message);
+                }
                 go_Form = Cls_Global.fn_CreateForm(gs_NomForm, gs_RutaForm);
                 sb_LoadMatrix(ps_Code);
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
             }
         }
@@ -125,6 +128,7 @@ namespace STR_CajaChica_Entregas.UL
             }
             catch (Exception ex)
             {
+                Cls_Global.WriteToFile(ex.Message);
                 go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
             }
             finally
