@@ -218,6 +218,7 @@ namespace STR_CajaChica_Entregas.UL
                         go_DBDts.Item(gs_DtdEARCRGDET2).SetValue("U_ER_MNDA", 0, go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET2).GetValue("U_ER_MNDA", 0));
                         go_DBDts.Item(gs_DtdEARCRGDET2).SetValue("U_ER_FCRG", 0, go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET2).GetValue("U_ER_FCRG", 0));
                         go_DBDts.Item(gs_DtdEARCRGDET2).SetValue("U_ER_NMPG", 0, go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET2).GetValue("U_ER_NMPG", 0));
+                        go_DBDts.Item(gs_DtdEARCRGDET2).SetValue("U_ER_CSHF", 0, go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET2).GetValue("U_ER_CSHF", 0));
                         lb_Result = Cls_EAR_Regularizar_BL.fn_GenerarPagoxTipoRegularizacion(go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET2).GetValue("U_ER_TPRG", 0).Trim(), go_DBDts);
                         if (lb_Result)
                         {

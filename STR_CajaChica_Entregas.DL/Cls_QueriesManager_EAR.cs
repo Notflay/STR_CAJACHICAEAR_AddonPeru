@@ -402,7 +402,7 @@ namespace STR_CajaChica_Entregas.DL
             }
         }
 
-        public static void ActualizarEstadodeCreacion(string ps_DcDoc, string ps_Estado, string ps_DcEntFrm,string ps_Filas)
+        public static void ActualizarEstadodeCreacion(string ps_DcDoc, string ps_Estado, string ps_DcEntFrm,string ps_Filas )
         {
             try
             {
@@ -486,7 +486,34 @@ namespace STR_CajaChica_Entregas.DL
                 go_RecSet = null;
             }
         }
-
+        public static SAPbobsCOM.Recordset fn_InfoTotalesPorActualizacion(string ps_impuesto, double pd_ttln, string ps_monedaDet, string ps_fecha, string ps_monedaCab)
+        {
+            try
+            {
+                go_RecSet = Cls_Global.go_SBOCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
+                if (go_ServerType == SAPbobsCOM.BoDataServerTypes.dst_HANADB)
+                {
+                    go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtTotalesXActualizacion.Split('|').GetValue(1).ToString().Split(new char[] { '?' });
+                }
+                else
+                {
+                    go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtTotalesXActualizacion.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
+                }
+                gs_Qry = go_ArrCad[0].Trim() + ps_impuesto + go_ArrCad[1].Trim() + pd_ttln + go_ArrCad[2].Trim() + ps_monedaDet + go_ArrCad[3].Trim() + ps_fecha + go_ArrCad[4].Trim() + ps_monedaCab + go_ArrCad[5].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
+                go_RecSet.DoQuery(gs_Qry);
+                return go_RecSet;
+            }
+            catch (Exception ex)
+            {
+                Cls_Global.go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
+                return null;
+            }
+            finally
+            {
+                go_RecSet = null;
+            }
+        }
         public static SAPbobsCOM.Recordset fn_InfoTotalesPorCarga(string ps_DcEnt)
         {
             try
@@ -501,6 +528,62 @@ namespace STR_CajaChica_Entregas.DL
                     go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtTotalesXCarga.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
                 }
                 gs_Qry = go_ArrCad[0].Trim() + ps_DcEnt + go_ArrCad[1].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
+                go_RecSet.DoQuery(gs_Qry);
+                return go_RecSet;
+            }
+            catch (Exception ex)
+            {
+                Cls_Global.go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
+                return null;
+            }
+            finally
+            {
+                go_RecSet = null;
+            }
+        }
+
+        public static SAPbobsCOM.Recordset fn_obtieneTipoCambio(string fechaContabiliza, string monedaDoc)
+        {
+            try
+            {
+                go_RecSet = Cls_Global.go_SBOCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
+                if (go_ServerType == SAPbobsCOM.BoDataServerTypes.dst_HANADB)
+                {
+                    go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtTipoCambio.Split('|').GetValue(1).ToString().Split(new char[] { '?' });
+                }
+                else
+                {
+                    go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtTipoCambio.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
+                }
+                gs_Qry = go_ArrCad[0].Trim() + fechaContabiliza + go_ArrCad[1].Trim() + monedaDoc + go_ArrCad[2].Trim();
+                Cls_Global.WriteToFile(gs_Qry);
+                go_RecSet.DoQuery(gs_Qry);
+                return go_RecSet;
+            }
+            catch (Exception ex)
+            {
+                Cls_Global.go_SBOApplication.StatusBar.SetText(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
+                return null;
+            }
+            finally {
+                go_RecSet = null;
+            }
+        }
+        public static SAPbobsCOM.Recordset fn_obtieneImpuesto(string impst)
+        {
+            try
+            {
+                go_RecSet = Cls_Global.go_SBOCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
+                if (go_ServerType == SAPbobsCOM.BoDataServerTypes.dst_HANADB)
+                {
+                    go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtImpuesto.Split('|').GetValue(1).ToString().Split(new char[] { '?' });
+                }
+                else
+                {
+                    go_ArrCad = Resources.Queries_SQL_HANA_EAR.ObtImpuesto.Split('|').GetValue(0).ToString().Split(new char[] { '?' });
+                }
+                gs_Qry = go_ArrCad[0].Trim() + impst + go_ArrCad[1].Trim();
                 Cls_Global.WriteToFile(gs_Qry);
                 go_RecSet.DoQuery(gs_Qry);
                 return go_RecSet;

@@ -39,6 +39,7 @@ namespace STR_CajaChica_Entregas.BL
         private static string gs_UflDetTotXLn = "U_ER_TTLN";
         private static string gs_UflDetCntArt = "U_ER_CNAR";
         private static string gs_UflDetDocEst = "U_ER_ESTD";
+        private static string gs_UflDetDocFlj = "U_ER_CSHF";    // Add flujo de caja
         //* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
         public static void sb_GenerarDocumentosyPagos(ref SAPbouiCOM.Form po_Form, ref int pi_CodErr, ref string ps_DscErr)
@@ -103,6 +104,7 @@ namespace STR_CajaChica_Entregas.BL
                             ls_XmlBsnssObj += lo_XElmnt.ToString();
                             go_SBOCompany.XMLAsString = true;
                             lo_BsnssObj = go_SBOCompany.GetBusinessObjectFromXML(ls_XmlBsnssObj, 0);
+                            Cls_Global.WriteToFile(lo_BsnssObj.GetAsXML().ToString()); 
                             if (lo_BsnssObj.Add() != 0)
                             {
                                 try
@@ -125,7 +127,7 @@ namespace STR_CajaChica_Entregas.BL
                                 ls_CtaPteEAR = Cls_QueriesManager_EAR.fn_ObtenerCodigoCtaPuenteEAR(ls_CtaPteEAR);
                                 lo_Doc.GetByKey(Convert.ToInt32(go_SBOCompany.GetNewObjectKey()));
                                 sb_ActualizarReferenciasAsDoc(lo_Doc, po_Form.DataSources.DBDataSources.Item(gs_DtcEARCRG).GetValue(gs_UflCabCodEAR, 0).Trim(), po_Form.DataSources.DBDataSources.Item(gs_DtcEARCRG).GetValue(gs_UflCabNroEAR, 0).Trim());
-                                if (sb_Pago(new SAPbobsCOM.Documents[] { lo_Doc }, lo_DBDSEARCRG, ls_CtaPteEAR, ref pi_CodErr, ref ps_DscErr))
+                                if (sb_Pago(new SAPbobsCOM.Documents[] { lo_Doc }, lo_DBDSEARCRG, lo_DBDSEARCRGDET.GetValue(gs_UflDetDocFlj, i).Trim(),ls_CtaPteEAR, ref pi_CodErr, ref ps_DscErr))
                                 {
                                     try
                                     {
@@ -226,7 +228,7 @@ namespace STR_CajaChica_Entregas.BL
             }
         }
 
-        private static bool sb_Pago(SAPbobsCOM.Documents[] po_ArrDocs, SAPbouiCOM.DBDataSource ps_DBDts, string ps_CntEAR, ref int pi_CodErr, ref string ps_DscErr)
+        private static bool sb_Pago(SAPbobsCOM.Documents[] po_ArrDocs, SAPbouiCOM.DBDataSource ps_DBDts, string ps_fljCj,string ps_CntEAR, ref int pi_CodErr, ref string ps_DscErr)
         {
             SAPbobsCOM.Payments lo_Pay = null;
             SAPbobsCOM.JournalEntries lo_PgoAs = null;
@@ -257,9 +259,15 @@ namespace STR_CajaChica_Entregas.BL
                 lo_Pay.UserFields.Fields.Item("U_BPP_CCHI").Value = ps_DBDts.GetValue(gs_UflCabCodEAR, 0).Trim();
                 lo_Pay.UserFields.Fields.Item("U_BPP_NUMC").Value = ps_DBDts.GetValue(gs_UflCabNroEAR, 0).Trim();
 
+                // Flujo de Caja 
+                //lo_Pay.PrimaryFormItems.
+
                 //Datos de Detalle
                 lo_Pay.Invoices.InvoiceType = SAPbobsCOM.BoRcptInvTypes.it_PurchaseInvoice;
                 lo_Pay.Invoices.DocEntry = po_ArrDocs[0].DocEntry;
+
+                //lo_Pay.PrimaryFormItems
+
                 if (po_ArrDocs[0].DocCurrency == Cls_Global.sb_ObtenerMonedaLocal())
                 {
                     lo_Pay.Invoices.SumApplied = po_ArrDocs[0].DocTotal;
@@ -274,6 +282,15 @@ namespace STR_CajaChica_Entregas.BL
                     if (po_ArrDocs[0].DocCurrency == Cls_Global.sb_ObtenerMonedaLocal())
                     {
                         lo_Pay.CashSum = po_ArrDocs[0].DocTotal;
+
+                        if (!string.IsNullOrEmpty(ps_fljCj))
+                        {
+                            // Flujo de caja - Validar solo si corresponde ue tenga 
+                            lo_Pay.PrimaryFormItems.AmountLC = po_ArrDocs[0].DocTotal;
+                            lo_Pay.PrimaryFormItems.PaymentMeans = SAPbobsCOM.PaymentMeansTypeEnum.pmtCash;
+                            lo_Pay.PrimaryFormItems.CashFlowLineItemID = Convert.ToInt32(ps_fljCj);
+                            lo_Pay.PrimaryFormItems.Add();
+                        }
                     }
                     else
                     {
@@ -281,6 +298,15 @@ namespace STR_CajaChica_Entregas.BL
                         if (pi_CodErr == 0 && ps_DscErr == string.Empty)
                         {
                             lo_Pay.CashSum = po_ArrDocs[0].DocTotalFc * ld_TpoCmb;
+
+                            if (!string.IsNullOrEmpty(ps_fljCj))
+                            {
+                                // Flujo de caja - Validar solo si corresponde ue tenga 
+                                lo_Pay.PrimaryFormItems.AmountFC = po_ArrDocs[0].DocTotalFc * ld_TpoCmb;
+                                lo_Pay.PrimaryFormItems.PaymentMeans = SAPbobsCOM.PaymentMeansTypeEnum.pmtCash;
+                                lo_Pay.PrimaryFormItems.CashFlowLineItemID = Convert.ToInt32(ps_fljCj);
+                                lo_Pay.PrimaryFormItems.Add();
+                            }
                         }
                         else
                         {
@@ -294,14 +320,33 @@ namespace STR_CajaChica_Entregas.BL
                     if (po_ArrDocs[0].DocCurrency == Cls_Global.sb_ObtenerMonedaLocal())
                     {
                         lo_Pay.CashSum = po_ArrDocs[0].DocTotal / lo_Pay.DocRate;
+
+                        if (!string.IsNullOrEmpty(ps_fljCj))
+                        {
+                            // Flujo de caja - Validar solo si corresponde ue tenga 
+                            lo_Pay.PrimaryFormItems.AmountFC = po_ArrDocs[0].DocTotal / lo_Pay.DocRate;
+                            lo_Pay.PrimaryFormItems.PaymentMeans = SAPbobsCOM.PaymentMeansTypeEnum.pmtCash;
+                            lo_Pay.PrimaryFormItems.CashFlowLineItemID = Convert.ToInt32(ps_fljCj);
+                            lo_Pay.PrimaryFormItems.Add();
+                        }
                     }
                     else
                     {
                         lo_Pay.CashSum = po_ArrDocs[0].DocTotalFc;
+
+                        if (!string.IsNullOrEmpty(ps_fljCj))
+                        {
+                            // Flujo de caja - Validar solo si corresponde ue tenga 
+                            lo_Pay.PrimaryFormItems.AmountFC = po_ArrDocs[0].DocTotalFc;
+                            lo_Pay.PrimaryFormItems.PaymentMeans = SAPbobsCOM.PaymentMeansTypeEnum.pmtCash;
+                            lo_Pay.PrimaryFormItems.CashFlowLineItemID = Convert.ToInt32(ps_fljCj);
+                            lo_Pay.PrimaryFormItems.Add();
+                        }
                     }
                 }
                 lo_Pay.Invoices.Add();
                 string xmlobtener = lo_Pay.GetAsXML().ToString();
+                Cls_Global.WriteToFile(xmlobtener);
                 if (lo_Pay.Add() != 0)
                 {
                     try

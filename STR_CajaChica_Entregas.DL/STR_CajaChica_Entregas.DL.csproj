@@ -97,10 +97,12 @@
     <EmbeddedResource Include="Resources\Queries_SQL_HANA_CCH.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Queries_SQL_HANA_CCH.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Queries_SQL_HANA_EAR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Queries_SQL_HANA_EAR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

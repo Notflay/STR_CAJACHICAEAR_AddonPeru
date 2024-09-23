@@ -62,6 +62,13 @@ namespace STR_CajaChica_Entregas.UL
         private string gs_UflDetCtaDest = "U_ER_DIM3";
         private string gs_UflDetGerenc = "U_ER_DIM4";
         private string gs_UflDetAreaOpe = "U_ER_DIM5";
+        // Seervicio
+        private string gs_UflDetCdgDscArt = "U_ER_DSAR";
+        private string gs_UflDetUndMed = "U_ER_UMAR";
+        private string gs_UflDetCdgServ = "U_ER_DSSR";
+        private string gs_UflCuntSegmen = "U_ER_NMCT";
+        private string gs_UflNomCuenta = "U_ER_DSCT";
+        //private string gs_UflCodCuenta = "U_ER_CSYS";
         ////* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
         ////* * * * * * * * * * * * User Data Sources * * * * * * * * * * * * * *
@@ -206,7 +213,8 @@ namespace STR_CajaChica_Entregas.UL
                // go_Matrix.Columns.Item("Col_19").Visible = false;
                 go_Matrix.Columns.Item("clmCodCta").Visible = false;
                 go_Matrix.Columns.Item("clmNroCta").Visible = false;
-               // go_Matrix.Columns.Item("clmNmbCta").Visible = false;
+                // go_Matrix.Columns.Item("clmNmbCta").Visible = false;
+                go_Matrix.Columns.Item("clmClsDcm").Editable = true;
                 go_Matrix.Columns.Item("clmDscSrv").Visible = false;
                 sb_AddUserColumnsToMatrix();
                 go_Matrix.AddRow();
@@ -348,6 +356,7 @@ namespace STR_CajaChica_Entregas.UL
                 case SAPbouiCOM.BoEventTypes.et_MATRIX_LINK_PRESSED:
                     this.fn_HandleMatrixLinkPressed(po_ItmEvnt);
                     break;
+             //   case SAPbouiCOM.BoEventTypes.:
                     //case SAPbouiCOM.BoEventTypes.et_CLICK:
                     //  lb_Result = this.fn_HandleClick(po_ItmEvnt);
                     //   break;
@@ -448,6 +457,7 @@ namespace STR_CajaChica_Entregas.UL
                                 //ld_PrcImp = lo_SlTxCds.Rate / 100;
                                 ld_PrcTot = ld_PrcUni * ld_CntArt;
                                 go_Matrix.SetCellWithoutValidation(po_ItmEvnt.Row, gs_ClmMtxTotLna, ld_PrcTot.ToString());
+                                sb_LoadAmountGrid();
                             }
                             if (po_ItmEvnt.ColUID == gs_ClmMtxTotLna)
                             {
@@ -455,6 +465,7 @@ namespace STR_CajaChica_Entregas.UL
                                 ld_TotLna = Convert.ToDouble(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxTotLna, po_ItmEvnt.Row)).Value.Trim());
                                 ld_PrcUni = ld_TotLna / ld_CntArt;
                                 go_Matrix.SetCellWithoutValidation(po_ItmEvnt.Row, gs_ClmMtxPrcUni, ld_PrcUni.ToString());
+                                sb_LoadAmountGrid();
                             }
                         }
                         break;
@@ -574,6 +585,9 @@ namespace STR_CajaChica_Entregas.UL
                             {
                                 if (go_Form.DataSources.DBDataSources.Item(gs_DtcEARCRG).GetValue("DocEntry", 0).Trim() != string.Empty)
                                     this.sb_InfoTotalesPorCarga();
+                                else
+                                    sb_ClearAmount();
+
                                 go_Form.Items.Item(gs_BtnContab).Visible = true;
                                 go_Form.Items.Item("lblSldIni").Visible = true;
                                 go_Form.Items.Item("txtSldIni").Visible = true;
@@ -585,6 +599,157 @@ namespace STR_CajaChica_Entregas.UL
             return lb_Result;
         }
 
+        private void sb_ClearAmount()
+        {
+            try
+            {
+                go_Form.Items.Item("Item_9").Specific.Value = 0;      // Sin impuestos
+                go_Form.Items.Item("Item_5").Specific.Value = 0;      // Con impuestos
+                go_Form.Items.Item("txtTotCnt").Specific.Value = 0;
+                go_Form.Items.Item("txtSldFin").Specific.Value = 0;
+            }
+            catch (Exception ex)
+            {
+                Cls_Global.WriteToFile($"sb_ClearAmount - {ex.Message}");
+            }
+        }
+        private void sb_LoadAmountGrid()
+        {
+            try
+            {
+                double ld_mntTotDoc = 0.0;
+                double ld_mntTotSinImp = 0.0;
+                double ld_mntTotImpsts = 0.0;
+
+                string monedaForm = go_Form.DataSources.DBDataSources.Item(gs_DtcEARCRG).GetValue(gs_UflEARMnd, 0);
+
+                for (int i = 0; i < go_Matrix.RowCount; i++)
+                {
+                    string ls_impuesto = ((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxImpDcm, i + 1)).Value;
+                    double valorTotalLinea = Convert.ToDouble(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxTotLna, i + 1)).Value);
+                    string moneda = ((SAPbouiCOM.ComboBox)go_Matrix.GetCellSpecific(gs_ClmMtxMoneda, i + 1)).Value;
+                    string fechaContabilzia = DateTime.ParseExact(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxFchDcm, i + 1)).Value, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+
+                    if (!string.IsNullOrEmpty(ls_impuesto) && valorTotalLinea != 0 && !string.IsNullOrEmpty(moneda) && !string.IsNullOrEmpty(fechaContabilzia))
+                    {
+                        try
+                        {
+                            (double a, double b, double c) = Fn_InfoTotalPorActualizar(ls_impuesto, valorTotalLinea, moneda, fechaContabilzia, monedaForm);
+                            ld_mntTotSinImp += a;
+                            ld_mntTotImpsts += b;
+                            ld_mntTotDoc += c;
+                        }
+                        catch (Exception ex)
+                        {
+                            Cls_Global.WriteToFile($"sb_LoadAmountGrid - {ex.Message}");
+                            //throw;
+                        }
+                    }
+                    //string ls_impuesto = ((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxImpDcm, i + 1)).Value;
+                    //string moneda = ((SAPbouiCOM.ComboBox)go_Matrix.GetCellSpecific(gs_ClmMtxMoneda, i + 1)).Value;
+                    //double valorTotalLinea = Convert.ToDouble(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxTotLna, i + 1)).Value);
+                    //string fechaContabilzia = DateTime.ParseExact(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxFchDcm, i + 1)).Value, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+
+                    //double tipoCambioMoneda = moneda == "SOL" ? 1.0 : Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneTipoCambio(fechaContabilzia, moneda).Fields.Item(0).Value);
+                    //double tipoCambioMonedaForm = monedaForm == "SOL" ? 1.0 : Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneTipoCambio(fechaContabilzia, monedaForm).Fields.Item(0).Value);
+
+                    //if (ls_impuesto == "EXO")
+                    //{
+                    //    ld_mntTotSinImp += valorTotalLinea * tipoCambioMoneda / tipoCambioMonedaForm;
+                    //}
+                    //else
+                    //{
+                    //    double impuesto = Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneImpuesto(ls_impuesto).Fields.Item(0).Value);
+                    //    double valorImpuesto = (valorTotalLinea * impuesto) / (impuesto + 100);
+                    //    //ld_mntTotSinImp += (valorTotalLinea - valorImpuesto) * tipoCambioMoneda / tipoCambioMonedaForm;
+                    //    ld_mntTotSinImp += valorTotalLinea - valorImpuesto * tipoCambioMoneda / tipoCambioMonedaForm;
+                    //    ld_mntTotImpsts += valorImpuesto * tipoCambioMoneda / tipoCambioMonedaForm;
+                    //}
+
+                    //ld_mntTotDoc += valorTotalLinea;
+                }
+
+                go_Form.Items.Item("Item_9").Specific.Value = ld_mntTotSinImp;      // Sin impuestos
+                go_Form.Items.Item("Item_5").Specific.Value = ld_mntTotImpsts;      // Con impuestos
+                go_Form.Items.Item("txtTotCnt").Specific.Value = ld_mntTotDoc.ToString();
+                go_Form.Items.Item("txtSldFin").Specific.Value = (Convert.ToDouble(go_Form.Items.Item("txtSldIni").Specific.Value) - ld_mntTotDoc).ToString();
+            }
+            catch (Exception ex)
+            {
+                Cls_Global.WriteToFile($"sb_LoadAmountGrid - {ex.Message}");
+            }
+        }
+
+        //private void sb_LoadAmountGrid()
+        //{
+        //    try
+        //    {
+        //        SAPbobsCOM.Recordset lo_RecSet = null;
+        //        string ls_impuesto = string.Empty;
+        //        string mondea = string.Empty;
+        //        string monedaForm = string.Empty; 
+
+        //        string fechaContabilzia = string.Empty;
+
+
+        //        double ld_mntTotDoc = 0.0;
+        //        double ld_mntTotSinImp = 0.0;   
+        //        double ld_mntTotImpsts = 0.0;   
+
+        //        monedaForm = ((SAPbouiCOM.EditText)go_Form.Items.Item("U_ER_MNDA")).Value;
+        //        for (int i = 0; i < go_Matrix.RowCount; i++)
+        //        {
+        //            ls_impuesto = ((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxImpDcm, i + 1)).Value;
+        //            mondea = ((SAPbouiCOM.ComboBox)go_Matrix.GetCellSpecific(gs_ClmMtxMoneda, i + 1)).Value;
+        //            ld_mntTotDoc = Convert.ToDouble(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxTotLna, i + 1)).Value);
+        //            fechaContabilzia = ((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxFchDcm, i + 1)).Value;
+
+        //            double valor1 = 0.0;
+        //           // double valor0 = mondea == "SOL" ? 1.0 : 0.0;
+        //            double valor2 = 0.0;
+        //            double valor3 = 0.0;
+        //            double valor4 = 0.0;
+
+        //            if (ls_impuesto == "EXO")
+        //            {
+        //                valor1 = Convert.ToDouble(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxTotLna, i + 1)).Value);
+        //                valor2 = mondea == "SOL" ? 1.0 : Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneTipoCambio(mondea, fechaContabilzia).Fields.Item(0).Value);
+        //                valor3 = monedaForm == "SOL" ? 1.0 : Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneTipoCambio(monedaForm, fechaContabilzia).Fields.Item(0).Value);
+        //                ld_mntTotSinImp += valor1 * valor2 / valor3;                                         
+        //            }
+        //            else {
+        //                valor1 = Convert.ToDouble(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxTotLna, i + 1)).Value);
+        //                double impuesto = Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneImpuesto(ls_impuesto).Fields.Item(0).Value);
+        //                valor2 = (valor1 * impuesto) / (impuesto + 100);
+        //                valor3 = mondea == "SOL" ? 1.0 : Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneTipoCambio(mondea, fechaContabilzia).Fields.Item(0).Value);
+        //                valor4 = monedaForm == "SOL" ? 1.0 : Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneTipoCambio(monedaForm, fechaContabilzia).Fields.Item(0).Value);
+        //                ld_mntTotSinImp += valor1 - valor2 * valor3 / valor4;
+        //            }
+
+        //            if (ls_impuesto == "EXO")
+        //            {
+        //                ld_mntTotImpsts += 0;
+        //            }
+        //            else {
+        //                valor1 = Convert.ToDouble(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxTotLna, i + 1)).Value);
+        //                double impuesto = Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneImpuesto(ls_impuesto).Fields.Item(0).Value);
+        //                valor2 = (valor1 * impuesto) / (impuesto + 100);
+        //                valor3 = mondea == "SOL" ? 1.0 : Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneTipoCambio(mondea, fechaContabilzia).Fields.Item(0).Value);
+        //                valor4 = monedaForm == "SOL" ? 1.0 : Convert.ToDouble(Cls_QueriesManager_EAR.fn_obtieneTipoCambio(monedaForm, fechaContabilzia).Fields.Item(0).Value);
+        //                ld_mntTotImpsts += valor2 * valor3 / valor4;
+        //            }
+
+        //            ld_mntTotDoc += Convert.ToDouble(((SAPbouiCOM.EditText)go_Matrix.GetCellSpecific(gs_ClmMtxTotLna, i + 1)).Value);
+        //        }
+
+        //        go_Form.Items.Item("txtTotCnt").Specific.Value = ld_mntTotDoc;
+        //        go_Form.Items.Item("txtSldFin").Specific.Value = Convert.ToDouble(go_Form.Items.Item("txtSldIni").Specific.Value) - ld_mntTotDoc;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Cls_Global.WriteToFile($"sb_LoadAmountGrid - {ex.Message}"); 
+        //    }
+        //}
         private void sb_LoadDataGrid()
         {
             string ls_CodEAR = string.Empty;
@@ -1376,22 +1541,24 @@ namespace STR_CajaChica_Entregas.UL
                     go_Matrix.Columns.Item(gs_ClmMtxAlmArt).Visible = true;
                     go_Matrix.Columns.Item(gs_ClmMtxUniMed).Visible = true;
 
-                    go_Matrix.Columns.Item(gs_ClmMtxDscSrv).Visible = false;
-                    go_Matrix.Columns.Item(gs_ClmMtxCodCta).Visible = false;
-                    go_Matrix.Columns.Item(gs_ClmMtxNroCta).Visible = false;
-                    go_Matrix.Columns.Item(gs_ClmMtxNmbCta).Visible = false;
+                    //go_Matrix.Columns.Item(gs_ClmMtxDscSrv).Visible = false;
+                    //go_Matrix.Columns.Item(gs_ClmMtxCodCta).Visible = false;
+                    //go_Matrix.Columns.Item(gs_ClmMtxNroCta).Visible = false;
+                    //go_Matrix.Columns.Item(gs_ClmMtxNmbCta).Visible = false;
+                    sb_EnabledCeldas(true, pi_Row);
                 }
                 else
                 {
-                    go_Matrix.Columns.Item(gs_ClmMtxCodArt).Visible = false;
-                    go_Matrix.Columns.Item(gs_ClmMtxNomArt).Visible = false;
-                    go_Matrix.Columns.Item(gs_ClmMtxAlmArt).Visible = false;
-                    go_Matrix.Columns.Item(gs_ClmMtxUniMed).Visible = false;
+                    //go_Matrix.Columns.Item(gs_ClmMtxCodArt).Visible = false;
+                    //go_Matrix.Columns.Item(gs_ClmMtxNomArt).Visible = false;
+                    //go_Matrix.Columns.Item(gs_ClmMtxAlmArt).Visible = false;
+                    //go_Matrix.Columns.Item(gs_ClmMtxUniMed).Visible = false;
 
                     go_Matrix.Columns.Item(gs_ClmMtxDscSrv).Visible = true;
                     go_Matrix.Columns.Item(gs_ClmMtxCodCta).Visible = true;
                     go_Matrix.Columns.Item(gs_ClmMtxNroCta).Visible = true;
                     go_Matrix.Columns.Item(gs_ClmMtxNmbCta).Visible = true;
+                    sb_EnabledCeldas(false, pi_Row);
                 }
             }
             catch (Exception ex)
@@ -1405,7 +1572,40 @@ namespace STR_CajaChica_Entregas.UL
             }
 
         }
+        private void sb_EnabledCeldas(bool pb_Articulo, int pi_row)
+        {
+            try
+            {
 
+                go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET).SetValue(!pb_Articulo ? gs_UflDetCdgArt : gs_UflDetCdgServ, pi_row - 1, string.Empty);
+                go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET).SetValue(!pb_Articulo ? gs_UflDetCdgDscArt : gs_UflCuntSegmen, pi_row - 1, string.Empty);
+                go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET).SetValue(!pb_Articulo ? gs_UflDetAlmArt : gs_UflNomCuenta, pi_row - 1, string.Empty);
+                go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET).SetValue(!pb_Articulo ? gs_UflDetCntArt : gs_UflDetCodCta, pi_row - 1, !pb_Articulo ? "1" : string.Empty); // Cantidad
+
+                if (!pb_Articulo) go_Form.DataSources.DBDataSources.Item(gs_DtdEARCRGDET).SetValue(gs_UflDetUndMed, pi_row - 1, string.Empty);
+
+                go_Matrix.LoadFromDataSource();
+
+                go_Matrix.CommonSetting.SetCellEditable(pi_row, 12, pb_Articulo);
+                go_Matrix.CommonSetting.SetCellEditable(pi_row, 13, pb_Articulo);
+                go_Matrix.CommonSetting.SetCellEditable(pi_row, 14, pb_Articulo);
+                go_Matrix.CommonSetting.SetCellEditable(pi_row, 16, pb_Articulo);
+
+                // go_Matrix.CommonSetting.SetCellEditable(pi_row, 20, !pb_Articulo);
+                go_Matrix.CommonSetting.SetCellEditable(pi_row, 21, !pb_Articulo);
+                go_Matrix.CommonSetting.SetCellEditable(pi_row, 22, false);
+                go_Matrix.CommonSetting.SetCellEditable(pi_row, 23, !pb_Articulo);
+            }
+            catch (Exception ex)
+            {
+                Cls_Global.WriteToFile(ex.Message);
+                go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
+            }
+            finally
+            {
+                go_Form.Freeze(false);
+            }
+        }
         private void sb_UpdateDataMatrix()
         {
             SAPbouiCOM.Conditions lo_Cnds = null;
@@ -1751,6 +1951,39 @@ namespace STR_CajaChica_Entregas.UL
             {
                 go_Form.Freeze(false);
             }
+        }
+
+        private (double ld_ttlsm, double ld_ttlimp, double ld_ttl) Fn_InfoTotalPorActualizar(string ps_impuesto, double pd_ttlinea, string ps_monedaDet, string fechaDoc, string ps_monedaCab)
+        {
+            SAPbobsCOM.Recordset lo_RecSet = null;
+            double ld_ttlsm = 0;
+            double ld_ttlimp = 0;
+            double ld_ttl = 0;
+
+            try
+            {
+                go_Form.Freeze(true);
+                (go_Form.Items.Item(gs_MtxDocs).Specific as SAPbouiCOM.Matrix).FlushToDataSource();
+                lo_RecSet = Cls_QueriesManager_EAR.fn_InfoTotalesPorActualizacion(ps_impuesto, pd_ttlinea, ps_monedaDet, fechaDoc, ps_monedaCab);
+
+                if (lo_RecSet != null)
+                {
+                    ld_ttlsm = Convert.ToDouble(lo_RecSet.Fields.Item(0).Value);
+                    ld_ttlimp = Convert.ToDouble(lo_RecSet.Fields.Item(1).Value);
+                    ld_ttl = Convert.ToDouble(lo_RecSet.Fields.Item(2).Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                Cls_Global.WriteToFile(ex.Message);
+                go_SBOApplication.SetStatusBarMessage(ex.Message, SAPbouiCOM.BoMessageTime.bmt_Short);
+            }
+            finally
+            {
+                go_Form.Freeze(false);
+            }
+
+            return (ld_ttlsm, ld_ttlimp, ld_ttl);
         }
     }
 }

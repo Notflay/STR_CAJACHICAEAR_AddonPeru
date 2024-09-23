@@ -140,8 +140,6 @@ C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_En
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\Resources\CajaChicaEAR\FrmCargarDocumentosEAR.srf
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\Resources\CajaChicaEAR\FrmDimDefault.srf
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\Resources\CajaChicaEAR\FrmRegularizarSaldos.srf
-C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.dll.config
-C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.dll
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.pdb
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.BL.dll
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.DL.dll
@@ -159,5 +157,9 @@ C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_En
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.GenerateResource.cache
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.csproj.CoreCompileInputs.cache
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_Caja.ED853B5B.Up2Date
-C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.dll
 C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.pdb
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.dll.config
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\STR_CajaChica_Entregas.UL.dll
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\obj\x86\Debug\STR_CajaChica_Entregas.UL.dll
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\System.ValueTuple.dll
+C:\Users\sebastian.poma\Source\Repos\STR_CAJACHICAEAR_AddonPeru\STR_CajaChica_Entregas.UL\bin\x86\Debug\System.ValueTuple.xml

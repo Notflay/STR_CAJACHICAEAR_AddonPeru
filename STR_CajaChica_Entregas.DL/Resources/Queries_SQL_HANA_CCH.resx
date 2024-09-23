@@ -155,7 +155,7 @@ FROM DSC1 WHERE "BankCode" = '?' AND "Account" = '?'</value>
     <value>SELECT FormatCode,AcctName FROM OACT WHERE AcctCode = '?'|SELECT "FormatCode","AcctName" FROM OACT WHERE "AcctCode" = '?'</value>
   </data>
   <data name="ObtFlujodeCaja" xml:space="preserve">
-    <value>SELECT CFWId, CFWName FROM OCFW | SELECT "CFWId","CFWName" FROM OCFW</value>
+    <value>SELECT CFWId, CFWName FROM OCFW WHERE "Postable" = 'Y' | SELECT "CFWId","CFWName" FROM OCFW WHERE "Postable" = 'Y'</value>
     <comment>query simple</comment>
   </data>
   <data name="ObtListadeBancos" xml:space="preserve">
@@ -167,7 +167,7 @@ INNER JOIN OACT T3 ON T1."GLAccount" = T3."AcctCode" WHERE T3."Postable" = 'Y'</
     <comment>query simple</comment>
   </data>
   <data name="ObtMontoApertura" xml:space="preserve">
-    <value>SELECT "U_CC_MNAP" FROM "@STR_CCHAPRDET" WHERE "U_CC_CJCH" = '?' AND "U_CC_NMCC" = '?'|SELECT "U_CC_MNAP" FROM "@STR_CCHAPRDET" WHERE "U_CC_CJCH" = '?' AND "U_CC_NMCC" = '?'</value>
+    <value>SELECT "U_CC_MNAP" FROM "@STR_CCHAPRDET" WHERE "U_CC_CJCH" = '?' AND "U_CC_NMCC" = '?' |SELECT "U_CC_MNAP" FROM "@STR_CCHAPRDET" WHERE "U_CC_CJCH" = '?' AND "U_CC_NMCC" = '?'</value>
     <comment>query simple</comment>
   </data>
   <data name="ObtNumerosdeCajaChicaActivos" xml:space="preserve">

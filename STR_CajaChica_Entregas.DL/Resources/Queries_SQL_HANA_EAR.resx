@@ -208,4 +208,13 @@ WHERE T1."U_ER_EARN" = '?' AND T1."U_ER_NMER" = '?'</value>
   <data name="ValidarRegularizarSaldosEAR" xml:space="preserve">
     <value>SELECT U_ER_SRGL FROM [@STR_HEMEAR] WHERE U_empID = '?' AND U_ER_CDUS  = '?'|SELECT "U_ER_SRGL" FROM "@STR_HEMEAR" WHERE "U_empID" = '?' AND "U_ER_CDUS" = '?'</value>
   </data>
+  <data name="ObtImpuesto" xml:space="preserve">
+    <value>SELECT "Rate" FROM OSTC WHERE "Code" = '?' | SELECT "Rate" FROM OSTC WHERE "Code" = '?'</value>
+  </data>
+  <data name="ObtTipoCambio" xml:space="preserve">
+    <value>SELECT "Rate" FROM ORTT WHERE "RateDate" = '?' AND "Currency" = '?' |  SELECT "Rate" FROM ORTT WHERE "RateDate" = '?' AND "Currency" = '?'</value>
+  </data>
+  <data name="ObtTotalesXActualizacion" xml:space="preserve">
+    <value>EXEC STR_SP_LOC_InfoTotalesPorParametroEAR '?','?','?','?','?'|CALL STR_SP_LOC_InfoTotalesPorParametroEAR('?','?','?','?','?')</value>
+  </data>
 </root>

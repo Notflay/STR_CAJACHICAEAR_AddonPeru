@@ -71,25 +71,31 @@ namespace STR_CajaChica_Entregas.UTIL
 
         public static void WriteToFile(string Message)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + "\\Logs";
-            if (!Directory.Exists(path))
+            try
             {
-                Directory.CreateDirectory(path);
-            }
-            string filepath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Logs\\Service_Creation_Log_{DateTime.Now.Date.ToShortDateString().Replace('/', '_')}.txt";
-            if (!File.Exists(filepath))
-            {
-                using (StreamWriter sw = File.CreateText(filepath))
+                string path = AppDomain.CurrentDomain.BaseDirectory + "\\Logs";
+                if (!Directory.Exists(path))
                 {
-                    sw.WriteLine(DateTime.Now.ToString() + " - " + Message);
+                    Directory.CreateDirectory(path);
+                }
+                string filepath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Logs\\Service_Creation_Log_{DateTime.Now.Date.ToShortDateString().Replace('/', '_')}.txt";
+                if (!File.Exists(filepath))
+                {
+                    using (StreamWriter sw = File.CreateText(filepath))
+                    {
+                        sw.WriteLine(DateTime.Now.ToString() + " - " + Message);
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(filepath))
+                    {
+                        sw.WriteLine(DateTime.Now.ToString() + " - " + Message);
+                    }
                 }
             }
-            else
+            catch (Exception)
             {
-                using (StreamWriter sw = File.AppendText(filepath))
-                {
-                    sw.WriteLine(DateTime.Now.ToString() + " - " + Message);
-                }
             }
         }
 
